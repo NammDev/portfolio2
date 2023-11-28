@@ -25,6 +25,52 @@
   }
 }
 
+@layer utilities {
+  .iconButton {
+    display: inline-flex;
+    appearance: none;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    user-select: none;
+    position: relative;
+    white-space: nowrap;
+    vertical-align: middle;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    line-height: 1.2;
+    border-radius: 1rem;
+    font-weight: 600;
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow,
+      transform;
+    transition-duration: 200ms;
+    height: 2.5rem;
+    min-width: 2.5rem;
+    font-size: 1rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0px;
+    background-color: transparent;
+    color: unset;
+  }
+
+  .iconButton:hover {
+    border-color: gray;
+    border-width: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  .iconButton:active {
+    background: rgba(255, 255, 255, 0.24);
+  }
+
+  .iconButton:focus-visible {
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -227,11 +273,6 @@ template {
 
 :where(blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre) {
   margin: 0;
-}
-
-button {
-  background: transparent;
-  padding: 0;
 }
 
 fieldset {
