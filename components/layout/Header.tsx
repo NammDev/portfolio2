@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import * as React from 'react'
 import { RiCommandFill } from 'react-icons/ri'
+import Navigation from './Navigation'
+import ThemeToggle from './ThemeToggle'
 
 // import CommandMenu from '~/lib/components/commands'
 // import { EVENT_TYPE_CTA } from '~/lib/constants/tracking'
@@ -34,7 +36,9 @@ const Header = () => {
           <div className='flex flex-1 self-stretch' />
 
           <div className='flex items-center ml-auto space-x-4'>
-            <div className='hidden md:flex'>{/* <Navigation /> */}</div>
+            <div className='hidden md:flex'>
+              <Navigation />
+            </div>
 
             <div className='flex gap-2'>
               <button
@@ -44,7 +48,7 @@ const Header = () => {
               >
                 <RiCommandFill />
               </button>
-              {/* <ThemeToggle /> */}
+              <ThemeToggle />
             </div>
           </div>
         </div>
