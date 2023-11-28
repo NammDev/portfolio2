@@ -10,7 +10,7 @@ const ThemeToggle = () => {
   //   const { colorMode, toggleColorMode } = useColorMode()
   //   const toggleIcon = useColorModeValue(<RiMoonFill />, <RiSunFill />)
   const [mounted, setMounted] = React.useState(false)
-  const [theme, setTheme] = React.useState<string>('light')
+  const [theme, setTheme] = React.useState('')
 
   React.useEffect(() => {
     setMounted(true)

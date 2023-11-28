@@ -30,7 +30,7 @@ const Header = () => {
       <header className='fixed top-0 z-5 bg-headerAlphaBackground backdrop-blur-[6px] w-full'>
         <div className='layoutBlock flex items-center'>
           <Link href='/'>
-            <h2 className='text-md font-medium !leading-[1.2] md:text-xl font-heading'>namm.dev</h2>
+            <h2 className='text-md font-medium !leading-[1.2] md:text-xl font-heading'>sznm.dev</h2>
           </Link>
 
           <div className='flex flex-1 self-stretch' />
