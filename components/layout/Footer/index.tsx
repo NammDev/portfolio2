@@ -39,7 +39,7 @@ const Footer = () => {
           <p className='chakra-text css-11wrcrc'>Not Playing</p>
         </div>
       </div> */}
-      <div className='grid grid-cols-2 md:grid-cols-4 md:flex md:flex-wrap md:gap-6'>
+      <div className='grid grid-cols-2 gap-4 md:flex md:flex-wrap md:gap-6'>
         <a
           target='_blank'
           rel='noopener'
