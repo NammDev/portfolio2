@@ -1,55 +1,112 @@
-import { Divider, Grid, Link, Stack, Text } from '@chakra-ui/react';
+// import { Divider, Grid, Link, Stack, Text } from '@chakra-ui/react'
 
-import SpotifyListening from '~/lib/components/common/SpotifyListening';
-import { EVENT_TYPE_LINK } from '~/lib/constants/tracking';
-import { trackEvent } from '~/lib/utils/trackEvent';
+// import SpotifyListening from '~/lib/components/common/SpotifyListening'
+// import { EVENT_TYPE_LINK } from '~/lib/constants/tracking'
+// import { trackEvent } from '~/lib/utils/trackEvent'
 
-import { links } from './constants';
-import FooterLink from './FooterLink';
+// import { links } from './constants'
+// import FooterLink from './FooterLink'
 
 const Footer = () => {
-  const handleClickFooterLink = (label: string) => () => {
-    trackEvent({
-      eventName: `Footer Link: ${label}`,
-      eventData: { type: EVENT_TYPE_LINK },
-    });
-  };
+  // const handleClickFooterLink = (label: string) => () => {
+  //   trackEvent({
+  //     eventName: `Footer Link: ${label}`,
+  //     eventData: { type: EVENT_TYPE_LINK },
+  //   })
+  // }
 
   return (
-    <Stack as="footer" layerStyle="layoutBlock" spacing={8}>
-      <Divider />
-
-      <SpotifyListening />
-
-      <Grid
-        display={{ base: 'grid', md: 'flex' }}
-        templateColumns={{
-          base: 'repeat(2, 1fr)',
-          md: `repeat(${links.length <= 4 ? links.length : 4}, 1fr)`,
-        }}
-        gap={{ base: 4, md: 6 }}
-      >
-        {links.map((link) => (
-          <FooterLink
-            {...link}
-            onClick={handleClickFooterLink(link.label)}
-            key={link.label}
-          />
-        ))}
-      </Grid>
-      <Text fontSize={['xs', 'sm']}>
-        &copy; 2020 - {new Date().getFullYear()}{' '}
-        <Link
-          href="https://agustinusnathaniel.com"
-          target="_blank"
-          rel="noopener noreferrer"
+    <footer className='layoutBlock gap-8 flex flex-col'>
+      <hr
+        aria-orientation='horizontal'
+        className='opacity-60 w-full border-0 border-[#ffffff29] border-solid border-b'
+      />
+      {/* <div target='_blank' className='css-1gma6c2'>
+        <svg
+          stroke='currentColor'
+          fill='currentColor'
+          strokeWidth={0}
+          viewBox='0 0 496 512'
+          focusable='false'
+          className='chakra-icon css-as54jj'
+          height='1em'
+          width='1em'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <path d='M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm100.7 364.9c-4.2 0-6.8-1.3-10.7-3.6-62.4-37.6-135-39.2-206.7-24.5-3.9 1-9 2.6-11.9 2.6-9.7 0-15.8-7.7-15.8-15.8 0-10.3 6.1-15.2 13.6-16.8 81.9-18.1 165.6-16.5 237 26.2 6.1 3.9 9.7 7.4 9.7 16.5s-7.1 15.4-15.2 15.4zm26.9-65.6c-5.2 0-8.7-2.3-12.3-4.2-62.5-37-155.7-51.9-238.6-29.4-4.8 1.3-7.4 2.6-11.9 2.6-10.7 0-19.4-8.7-19.4-19.4s5.2-17.8 15.5-20.7c27.8-7.8 56.2-13.6 97.8-13.6 64.9 0 127.6 16.1 177 45.5 8.1 4.8 11.3 11 11.3 19.7-.1 10.8-8.5 19.5-19.4 19.5zm31-76.2c-5.2 0-8.4-1.3-12.9-3.9-71.2-42.5-198.5-52.7-280.9-29.7-3.6 1-8.1 2.6-12.9 2.6-13.2 0-23.3-10.3-23.3-23.6 0-13.6 8.4-21.3 17.4-23.9 35.2-10.3 74.6-15.2 117.5-15.2 73 0 149.5 15.2 205.4 47.8 7.8 4.5 12.9 10.7 12.9 22.6 0 13.6-11 23.3-23.2 23.3z' />
+        </svg>
+        <div className='css-0'>
+          <p className='chakra-text css-11wrcrc'>Not Playing</p>
+        </div>
+      </div> */}
+      <div className='grid grid-cols-2 md:grid-cols-4 md:flex md:flex-wrap md:gap-6'>
+        <a
+          target='_blank'
+          rel='noopener'
+          className='transition-all cursor-pointer no-underline outline-none outline-offset-2 text-inherit hover:underline font-heading font-semibold'
+          aria-label='Base'
+          href='https://base.sznm.dev'
+        >
+          Base
+        </a>
+        <a
+          target='_blank'
+          rel='noopener'
+          className='transition-all cursor-pointer no-underline outline-none outline-offset-2 text-inherit hover:underline font-heading font-semibold'
+          aria-label='Bookmarks'
+          href='https://base.sznm.dev/bookmarks'
+        >
+          Bookmarks
+        </a>
+        <a
+          className='transition-all cursor-pointer no-underline outline-none outline-offset-2 text-inherit hover:underline font-heading font-semibold'
+          aria-label='T.I.L.'
+          href='/til'
+        >
+          T.I.L.
+        </a>
+        <a
+          target='_blank'
+          rel='noopener'
+          className='transition-all cursor-pointer no-underline outline-none outline-offset-2 text-inherit hover:underline font-heading font-semibold'
+          aria-label='Templates'
+          href='https://github.com/sozonome?tab=repositories&type=template&language=&sort=stargazers'
+        >
+          Templates
+        </a>
+        <a
+          target='_blank'
+          rel='noopener'
+          className='transition-all cursor-pointer no-underline outline-none outline-offset-2 text-inherit hover:underline font-heading font-semibold'
+          aria-label='Timeline'
+          href='https://poly.sznm.dev'
+        >
+          Timeline
+        </a>
+        <a
+          target='_blank'
+          rel='noopener'
+          className='transition-all cursor-pointer no-underline outline-none outline-offset-2 text-inherit hover:underline font-heading font-semibold'
+          aria-label='Analytics'
+          href='https://umami.sznm.dev/share/Zl0vE0h0/sznm.dev'
+        >
+          Analytics
+        </a>
+      </div>
+      <p className='md:text-sm text-xs font-sans'>
+        © 2020 - {/* */}2023{/* */}{' '}
+        <a
+          target='_blank'
+          rel='noopener noreferrer'
+          className='transition-all cursor-pointer no-underline outline-none outline-offset-2 text-inherit hover:underline'
+          href='https://agustinusnathaniel.com'
           aria-label="Agustinus Nathaniel's site: https://agustinusnathaniel.com"
         >
           Agustinus Nathaniel
-        </Link>
-      </Text>
-    </Stack>
-  );
-};
+        </a>
+      </p>
+    </footer>
+  )
+}
 
-export default Footer;
+export default Footer

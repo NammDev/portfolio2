@@ -6,7 +6,7 @@ import type { ReactNode } from 'react'
 // import { useCommandCenter } from '~/lib/components/commands/hook'
 
 const Header = dynamic(() => import('./Header'))
-// const Footer = dynamic(() => import('./Footer'))
+const Footer = dynamic(() => import('./Footer'))
 
 type LayoutProps = {
   children: ReactNode
@@ -20,7 +20,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Header />
       <div className='flex flex-col items-center relative z-10 space-y-8'>
         <main className='layoutBlock'>{children}</main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
       {/* <TabBar /> */}
     </div>
