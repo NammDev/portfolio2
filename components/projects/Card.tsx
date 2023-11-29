@@ -1,8 +1,9 @@
-import { Box, Link, Text, Stack, useColorModeValue } from '@chakra-ui/react'
+// import { Box, Text, Stack, useColorModeValue } from '@chakra-ui/react'
+import Link from 'next/link'
 import Image from 'next/image'
 import * as React from 'react'
 
-import type { Project } from 'contentlayer/generated'
+// import type { Project } from 'contentlayer/generated'
 // import { EVENT_TYPE_LINK } from '~/lib/constants/tracking'
 // import { trackEvent } from '~/lib/utils/trackEvent'
 
@@ -10,9 +11,31 @@ type CardProps = {
   project: Project
 }
 
-const Card = ({
-  project: { title, icon, thumbnail, thumbnailDark, projectLink, playStoreLink, repoLink },
-}: CardProps) => {
+export type Project = {
+  /** File path relative to `contentDirPath` */
+  _id: string
+  type: 'Project'
+  title: string
+  description: string
+  published?: boolean | undefined
+  highlight?: boolean | undefined
+  featured?: boolean | undefined
+  sznmApps?: boolean | undefined
+  stacks?: string[] | undefined
+  date?: string | undefined
+  projectLink?: string | undefined
+  repoLink?: string | undefined
+  appStoreLink?: string | undefined
+  playStoreLink?: string | undefined
+  icon?: string | undefined
+  thumbnail?: string | undefined
+  thumbnailDark?: string | undefined
+  projectType?: string | undefined
+  /** Markdown file body */
+  id: string
+}
+
+const Card = () => {
   //   const dynamicThumbnail = useColorModeValue(thumbnail, thumbnailDark || thumbnail)
   //   const borderHighlight = useColorModeValue('gray', 'white')
   //   const thumbnailUrl = thumbnail ? dynamicThumbnail : null
@@ -33,85 +56,41 @@ const Card = ({
 
   return (
     <Link
-      href={link}
-      aria-label={`Link to ${title}`}
-      isExternal
-      onClick={handleClickProject}
-      _hover={{
-        textDecoration: 'none',
-      }}
-      role='group'
+      target='_blank'
+      rel='noopener'
+      className='group transition-all cursor-pointer no-underline outline-none outline-offset-2 text-inherit'
+      href='https://wussh.sznm.dev'
+      aria-label='Link to wussh'
     >
-      <Box
-        borderColor='elevatedCardBorder'
-        borderWidth={2}
-        boxShadow='0px 0px 32px 2px rgba(38, 46, 51, 0.1);'
-        borderRadius={20}
-        cursor='pointer'
-        alignItems='center'
-        overflow='hidden'
-        justifyContent='center'
-        position='relative'
-        transition='0.2s ease-out'
-        _hover={{
-          shadow: 'xl',
-          borderColor: borderHighlight,
-        }}
-      >
-        {thumbnailUrl && (
-          <Box
-            height={[200, 250, 200]}
-            sx={{
-              img: {
-                transition: '0.2s cubic-bezier(0.15, 0.0, 0.85, 1.0)',
-                filter: 'blur(0.25rem)',
-              },
-            }}
-            _groupHover={{
-              img: {
-                transform: 'scale(1.05)',
-                filter: 'blur(0)',
-              },
-            }}
-          >
+      <div className='hover:border-white hover:shadow-md shadow-sm rounded-[20px] border-gray-800 border-2 cursor-pointer relative block items-center justify-center overflow-hidden transition duration-500 ease-out'>
+        <div className='h-[200px] sm:h-[250px] md:h-[200px]'>
+          <Image
+            alt='wussh-thumbnail'
+            loading='lazy'
+            width={1000}
+            className='text-transparent object-cover object-[50%_0px] group-hover:blur-0 group-hover:scale-105 blur-sm transition-transform duration-200'
+            height={200}
+            decoding='async'
+            data-nimg={1}
+            src='/_next/image?url=%2Fapp_preview%2Fwussh.png&w=2048&q=75'
+          />
+        </div>
+        <div className='flex justify-end flex-col gap-4 absolute h-full z-20 w-full bg-[linear-gradient(to_top,rgba(0,0,0,0.5)_0%,rgba(237,242,247,0))] p-6 bottom-0'>
+          <div className='flex items-center flex-row gap-2'>
             <Image
-              width={1000}
-              height={200}
-              style={{
-                objectFit: 'cover',
-                objectPosition: '50% 0',
-              }}
-              src={thumbnailUrl}
-              alt={`${title}-thumbnail`}
+              alt='wussh'
+              loading='lazy'
+              width={32}
+              height={32}
+              decoding='async'
+              data-nimg={1}
+              src='/app_icons/link.svg'
+              style={{ color: 'transparent' }}
             />
-          </Box>
-        )}
-
-        <Stack
-          position='absolute'
-          justifyContent='flex-end'
-          bottom={0}
-          padding={6}
-          height='full'
-          spacing={4}
-          zIndex={20}
-          width='full'
-          bgGradient={overlayBgGradient}
-        >
-          <Stack direction='row' alignItems='center'>
-            {icon && <Image src={icon} width={32} height={32} alt={title} />}
-            <Text
-              fontWeight='bold'
-              fontSize='lg'
-              fontFamily='heading'
-              textShadow='md'
-              color='white'
-            >
-              {title}
-            </Text>
-          </Stack>
-        </Stack>
-      </Box>
+            <p className='font-heading text-shadow font-bold text-white text-lg'>wussh</p>
+          </div>
+        </div>
+      </div>
     </Link>
   )
 }
