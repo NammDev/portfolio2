@@ -24,7 +24,7 @@ const NavItem = ({ href, label, icon }: NavItemProps) => {
     <Link
       href={href}
       aria-label={label}
-      className='iconButton bg-transparent text-[unset] border-none flex-basis-25% text-xl md:text-md p-0'
+      className='iconButton bg-transparent text-[unset] text-xl md:text-md p-0'
       // onClick={handleClickNavigation}
     >
       {icon({ style: { cursor: 'pointer' } })}

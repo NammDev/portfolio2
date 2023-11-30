@@ -30,7 +30,6 @@
     display: inline-flex;
     appearance: none;
     align-items: center;
-    -webkit-box-pack: center;
     justify-content: center;
     user-select: none;
     position: relative;
@@ -53,13 +52,16 @@
     padding: 0px;
     background-color: transparent;
     color: unset;
+    flex-basis: 25%;
+    border-color: gray;
   }
 
   .iconButton:hover {
+    border-width: 2px;
     border-color: gray;
     border-width: 2px;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    background: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.08);
   }
 
   .iconButton:active {
@@ -73,8 +75,8 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: #1a1a1a;
+  --background-end-rgb: #1a1a1a;
   --chakra-colors-chakra-placeholder-color: #414042;
   --chakra-colors-chakra-border-color: #e2e8f0;
 }
@@ -84,8 +86,8 @@
     --background: #1a1a1a;
     --foreground: #d9d9d9;
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: #1a1a1a;
+    --background-end-rgb: #1a1a1a;
   }
 }
 
@@ -358,7 +360,7 @@ select::-ms-expand {
 
 body {
   color: #1a1a1a;
-  background: white;
+  background: var(--background);
   transition-property: background-color;
   transition-duration: 200ms;
   line-height: 1.5;
