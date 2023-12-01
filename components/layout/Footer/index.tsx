@@ -1,11 +1,9 @@
-// import { Divider, Grid, Link, Stack, Text } from '@chakra-ui/react'
-
 // import SpotifyListening from '~/lib/components/common/SpotifyListening'
 // import { EVENT_TYPE_LINK } from '~/lib/constants/tracking'
 // import { trackEvent } from '~/lib/utils/trackEvent'
 
-// import { links } from './constants'
-// import FooterLink from './FooterLink'
+import FooterLink from './FooterLink'
+import { links } from './constants'
 
 const Footer = () => {
   // const handleClickFooterLink = (label: string) => () => {
@@ -40,58 +38,9 @@ const Footer = () => {
         </div>
       </div> */}
       <div className='grid grid-cols-2 gap-4 md:flex md:flex-wrap md:gap-6'>
-        <a
-          target='_blank'
-          rel='noopener'
-          className='transition-all cursor-pointer no-underline outline-none outline-offset-2 text-inherit hover:underline font-heading font-semibold'
-          aria-label='Base'
-          href='https://base.sznm.dev'
-        >
-          Base
-        </a>
-        <a
-          target='_blank'
-          rel='noopener'
-          className='transition-all cursor-pointer no-underline outline-none outline-offset-2 text-inherit hover:underline font-heading font-semibold'
-          aria-label='Bookmarks'
-          href='https://base.sznm.dev/bookmarks'
-        >
-          Bookmarks
-        </a>
-        <a
-          className='transition-all cursor-pointer no-underline outline-none outline-offset-2 text-inherit hover:underline font-heading font-semibold'
-          aria-label='T.I.L.'
-          href='/til'
-        >
-          T.I.L.
-        </a>
-        <a
-          target='_blank'
-          rel='noopener'
-          className='transition-all cursor-pointer no-underline outline-none outline-offset-2 text-inherit hover:underline font-heading font-semibold'
-          aria-label='Templates'
-          href='https://github.com/sozonome?tab=repositories&type=template&language=&sort=stargazers'
-        >
-          Templates
-        </a>
-        <a
-          target='_blank'
-          rel='noopener'
-          className='transition-all cursor-pointer no-underline outline-none outline-offset-2 text-inherit hover:underline font-heading font-semibold'
-          aria-label='Timeline'
-          href='https://poly.sznm.dev'
-        >
-          Timeline
-        </a>
-        <a
-          target='_blank'
-          rel='noopener'
-          className='transition-all cursor-pointer no-underline outline-none outline-offset-2 text-inherit hover:underline font-heading font-semibold'
-          aria-label='Analytics'
-          href='https://umami.sznm.dev/share/Zl0vE0h0/sznm.dev'
-        >
-          Analytics
-        </a>
+        {links.map((link) => (
+          <FooterLink {...link} key={link.label} />
+        ))}
       </div>
       <p className='md:text-sm text-xs font-sans'>
         © 2020 - {/* */}2023{/* */}{' '}

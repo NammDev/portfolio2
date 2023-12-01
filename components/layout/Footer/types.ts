@@ -1,5 +1,4 @@
 export type FooterLinkProps = {
-  label: string;
-  url: string;
-  onClick: () => void;
-};
+  label: string
+  url: string
+}

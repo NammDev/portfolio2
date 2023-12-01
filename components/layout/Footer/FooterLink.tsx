@@ -1,22 +1,19 @@
-import { Link as ChakraLink } from '@chakra-ui/react';
-import Link from 'next/link';
+import Link from 'next/link'
 
-import type { FooterLinkProps } from './types';
+import type { FooterLinkProps } from './types'
 
-const FooterLink = ({ label, url, onClick }: FooterLinkProps) => {
+const FooterLink = ({ label, url }: FooterLinkProps) => {
   return (
-    <ChakraLink
-      as={Link}
+    <Link
+      target='_blank'
+      rel='noopener'
+      className='transition-all cursor-pointer no-underline outline-none outline-offset-2 text-inherit hover:underline font-heading font-semibold'
       href={url}
-      isExternal={url.startsWith('http')}
-      fontWeight="semibold"
-      fontFamily="heading"
-      onClick={onClick}
       aria-label={label}
     >
       {label}
-    </ChakraLink>
-  );
-};
+    </Link>
+  )
+}
 
-export default FooterLink;
+export default FooterLink
