@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     default: 'Namm - Digital Crafter | sozonome',
     template: '%s | sozonome',
   },
-  description: "Namm's Dev Site | sozonome",
+  description: "Namm's Dev Site | namm.dev",
   openGraph: {
     url: 'https://sznm.dev',
     title: 'sozonome | Digital Crafter',
