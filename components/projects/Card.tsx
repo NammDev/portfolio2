@@ -14,7 +14,7 @@ type CardProps = {
 const Card = ({
   project: { title, icon, thumbnail, thumbnailDark, projectLink, playStoreLink, repoLink },
 }: CardProps) => {
-  const link = playStoreLink ?? projectLink ?? repoLink
+  const link = playStoreLink ?? projectLink ?? repoLink ?? ''
 
   // const handleClickProject = React.useCallback(() => {
   //   trackEvent({

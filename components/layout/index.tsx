@@ -7,6 +7,7 @@ import type { ReactNode } from 'react'
 
 const Header = dynamic(() => import('./Header'))
 const Footer = dynamic(() => import('./Footer'))
+const TabBar = dynamic(() => import('./TabBar'))
 
 type LayoutProps = {
   children: ReactNode
@@ -22,7 +23,7 @@ const Layout = ({ children }: LayoutProps) => {
         <main className='layoutBlock'>{children}</main>
         <Footer />
       </div>
-      {/* <TabBar /> */}
+      <TabBar />
     </div>
   )
 }
