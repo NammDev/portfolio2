@@ -1,39 +1,39 @@
-// import { Box, Grid, Heading } from '@chakra-ui/react'
+'use client'
 
-// import MotionBox from '~/lib/components/motion/MotionBox'
-// import MotionGrid from '~/lib/components/motion/MotionGrid'
-// import ProjectDetailWrapper from '~/lib/components/projects/detail'
-// import { childAnimationProps, staggerAnimationProps } from '~/lib/constants/animation'
-// import { featuredProjects } from '~/lib/constants/project'
+import { motion } from 'framer-motion'
+
+import { childAnimationProps, staggerAnimationProps } from '@/constants/animation'
 import ProjectListBottomNav from './BottomNav'
+import ProjectDetailWrapper from '@/components/projects/detail'
+import { featuredProjects } from '@/constants/project'
 
 const ProjectList = () => {
-  //   const highlightedProjects = featuredProjects.filter((project) => project.highlight)
-  //   const nonHighlightedFeaturedProjects = featuredProjects.filter((project) => !project.highlight)
+  const highlightedProjects = featuredProjects.filter((project) => project.highlight)
+  const nonHighlightedFeaturedProjects = featuredProjects.filter((project) => !project.highlight)
 
-  //   const highlightedProjectCards = highlightedProjects.map((projectData) => {
-  //     return (
-  //       <MotionBox {...childAnimationProps} key={projectData.id}>
-  //         <ProjectDetailWrapper
-  //           projectData={projectData}
-  //           source='Featured Projects'
-  //           key={projectData.id}
-  //         />
-  //       </MotionBox>
-  //     )
-  //   })
+  const highlightedProjectCards = highlightedProjects.map((projectData) => {
+    return (
+      <motion.div {...childAnimationProps} key={projectData.id}>
+        <ProjectDetailWrapper
+          projectData={projectData}
+          source='Featured Projects'
+          key={projectData.id}
+        />
+      </motion.div>
+    )
+  })
 
-  //   const nonHighlightedProjectCards = nonHighlightedFeaturedProjects.map((projectData) => {
-  //     return (
-  //       <MotionBox {...childAnimationProps} key={projectData.id}>
-  //         <ProjectDetailWrapper
-  //           projectData={projectData}
-  //           source='Featured Projects'
-  //           key={projectData.id}
-  //         />
-  //       </MotionBox>
-  //     )
-  //   })
+  const nonHighlightedProjectCards = nonHighlightedFeaturedProjects.map((projectData) => {
+    return (
+      <motion.div {...childAnimationProps} key={projectData.id}>
+        <ProjectDetailWrapper
+          projectData={projectData}
+          source='Featured Projects'
+          key={projectData.id}
+        />
+      </motion.div>
+    )
+  })
 
   return (
     <>
@@ -43,19 +43,15 @@ const ProjectList = () => {
         </h1>
       </div>
 
-      {/* <Grid gap={6} marginBottom={8}>
-        <MotionGrid {...staggerAnimationProps} gap={6}>
+      <div className='grid gap-6 mb-8'>
+        <motion.div className='grid gap-6' {...staggerAnimationProps}>
           {highlightedProjectCards}
-        </MotionGrid>
+        </motion.div>
 
-        <MotionGrid
-          {...staggerAnimationProps}
-          gap={6}
-          gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }}
-        >
+        <motion.div className='grid gap-6 md:grid-cols-2 grid-cols-1' {...staggerAnimationProps}>
           {nonHighlightedProjectCards}
-        </MotionGrid>
-      </Grid> */}
+        </motion.div>
+      </div>
 
       <ProjectListBottomNav />
     </>
