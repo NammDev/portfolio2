@@ -6,6 +6,7 @@ export type Project = {
   stacks?: string[]
   date: string
   projectLink?: string
+  playStoreLink?: string
   repoLink?: string
   icon?: string
   highlight?: boolean

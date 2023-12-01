@@ -1,54 +1,29 @@
 'use client'
 
 import Card from '@/components/projects/Card'
+import { Project } from '@/types/project'
 // import { Box, Button, Grid, Heading, Stack } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import * as React from 'react'
 import { FaArrowRight } from 'react-icons/fa'
 
-// import type { Project } from 'contentlayer/generated'
-// import Card from '~/lib/components/projects/Card'
 // import { EVENT_TYPE_NAVIGATE } from '~/lib/constants/tracking'
 // import { trackEvent } from '~/lib/utils/trackEvent'
 
-export type Project = {
-  /** File path relative to `contentDirPath` */
-  _id: string
-  type: 'Project'
-  title: string
-  description: string
-  published?: boolean | undefined
-  highlight?: boolean | undefined
-  featured?: boolean | undefined
-  sznmApps?: boolean | undefined
-  stacks?: string[] | undefined
-  date?: string | undefined
-  projectLink?: string | undefined
-  repoLink?: string | undefined
-  appStoreLink?: string | undefined
-  playStoreLink?: string | undefined
-  icon?: string | undefined
-  thumbnail?: string | undefined
-  thumbnailDark?: string | undefined
-  projectType?: string | undefined
-  /** Markdown file body */
-  id: string
-}
-
 type ProjectsSectionProps = { data: Array<Project> }
 
-const ProjectsSection = () => {
+const ProjectsSection = ({ data }: ProjectsSectionProps) => {
   const router = useRouter()
 
-  // React.useEffect(() => {
-  //   data
-  //     .filter((project) => project.highlight && project)
-  //     .forEach(({ id }) => {
-  //       router.prefetch(`/projects/${id}`)
-  //     })
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [data])
+  React.useEffect(() => {
+    data
+      .filter((project) => project.highlight && project)
+      .forEach(({ id }) => {
+        router.prefetch(`/projects/${id}`)
+      })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data])
 
   //   const handleClickViewAllProjects = React.useCallback(() => {
   //     trackEvent({
@@ -66,11 +41,9 @@ const ProjectsSection = () => {
       </Link>
 
       <div className='grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 my-8'>
-        {/* {data.map((project) => (
+        {data.map((project) => (
           <Card project={project} key={project.id} />
-        ))} */}
-        <Card />
-        <Card />
+        ))}
       </div>
 
       <div>
