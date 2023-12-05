@@ -1,17 +1,19 @@
 'use client'
 
+import { Blog } from '@/.contentlayer/generated'
 import BlogPostPreview from '@/components/blog/posts/BlogPostPreview'
-// import { Box, Button, Grid, Heading, Stack } from '@chakra-ui/react'
 import Link from 'next/link'
 import * as React from 'react'
 import { FaArrowRight } from 'react-icons/fa'
 
-// import type { Blog } from 'contentlayer/generated'
-// import BlogPostPreview from '~/lib/components/blog/BlogPostPreview'
 // import { EVENT_TYPE_NAVIGATE } from '~/lib/constants/tracking'
 // import { trackEvent } from '~/lib/utils/trackEvent'
 
-const PostsSection = () => {
+type PostsSectionProps = {
+  data: Array<Blog>
+}
+
+const PostsSection = ({ data }: PostsSectionProps) => {
   //   const handleClickViewAllPosts = React.useCallback(() => {
   //     trackEvent({
   //       eventName: 'Home: View All Posts',
@@ -26,15 +28,9 @@ const PostsSection = () => {
       </h2>
 
       <div className='grid gap-8'>
-        {/* {data.map((postData) => (
+        {data.map((postData) => (
           <BlogPostPreview postData={postData} key={postData.id} />
-        ))} */}
-        <BlogPostPreview
-          title='How to Secure Your Firebase Project'
-          date='May 13, 2021'
-          read='3 min read'
-        />
-        <BlogPostPreview title='2020 Recap' date='Dec 31, 2020' read='6 min read' />
+        ))}
       </div>
 
       <div>
