@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
-import { motion } from 'framer-motion'
 
 // import { EVENT_TYPE_NAVIGATE } from '~/lib/constants/tracking'
 // import { handleRouteBack } from '~/lib/utils/handleRouteBack'
@@ -13,6 +12,7 @@ import { splitProjectByTypes } from '@/lib/utils/project'
 import Link from 'next/link'
 import { Project } from '@/.contentlayer/generated'
 import { sortedProjects } from '@/lib/constants/project'
+import { MotionDiv } from '@/components/motion/MotionDiv'
 
 const renderProjectList = ({
   projects,
@@ -24,13 +24,13 @@ const renderProjectList = ({
   return (
     <div className='grid gap-4'>
       <h3 className='font-bold text-[1.875rem] leading-[1.2] font-heading'>{category}</h3>
-      <motion.div {...staggerAnimationProps} className='grid gap-8 grid-cols-1 lg:grid-cols-2'>
+      <MotionDiv {...staggerAnimationProps} className='grid gap-8 grid-cols-1 lg:grid-cols-2'>
         {projects.map((projectData) => (
-          <motion.div {...childAnimationProps} key={projectData.id}>
+          <MotionDiv {...childAnimationProps} key={projectData.id}>
             <ProjectDetailWrapper projectData={projectData} source='Other Projects' />
-          </motion.div>
+          </MotionDiv>
         ))}
-      </motion.div>
+      </MotionDiv>
     </div>
   )
 }

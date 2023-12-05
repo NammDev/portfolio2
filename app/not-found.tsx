@@ -1,20 +1,17 @@
-'use client'
-
 import Link from 'next/link'
-import { motion } from 'framer-motion'
-import Image from 'next/image'
 import Svg404 from '@/constants/404svg'
+import { MotionDiv } from '@/components/motion/MotionDiv'
 
 const NotFound = () => {
   return (
     <div>
-      <motion.div
+      <MotionDiv
         className='relative mx-auto w-full sm:w-[70%] md:w-[60%] lg:w-[60%]'
         animate={{ y: 20 }}
         transition={{ repeat: Infinity, duration: 2, repeatType: 'reverse' }}
       >
         <Svg404 />
-      </motion.div>
+      </MotionDiv>
       <p className='text-center text-xs'>
         <Link href='https://stories.freepik.com/web' target='_blank'>
           Illustration by Freepik Stories

@@ -1,6 +1,4 @@
-'use client'
-
-import { motion } from 'framer-motion'
+import { MotionDiv } from '@/components/motion/MotionDiv'
 
 import { childAnimationProps, staggerAnimationProps } from '@/constants/animation'
 import ProjectListBottomNav from './BottomNav'
@@ -13,25 +11,25 @@ const ProjectList = () => {
 
   const highlightedProjectCards = highlightedProjects.map((projectData) => {
     return (
-      <motion.div {...childAnimationProps} key={projectData.id}>
+      <MotionDiv {...childAnimationProps} key={projectData.id}>
         <ProjectDetailWrapper
           projectData={projectData}
           source='Featured Projects'
           key={projectData.id}
         />
-      </motion.div>
+      </MotionDiv>
     )
   })
 
   const nonHighlightedProjectCards = nonHighlightedFeaturedProjects.map((projectData) => {
     return (
-      <motion.div {...childAnimationProps} key={projectData.id}>
+      <MotionDiv {...childAnimationProps} key={projectData.id}>
         <ProjectDetailWrapper
           projectData={projectData}
           source='Featured Projects'
           key={projectData.id}
         />
-      </motion.div>
+      </MotionDiv>
     )
   })
 
@@ -44,13 +42,13 @@ const ProjectList = () => {
       </div>
 
       <div className='grid gap-6 mb-8'>
-        <motion.div className='grid gap-6' {...staggerAnimationProps}>
+        <MotionDiv className='grid gap-6' {...staggerAnimationProps}>
           {highlightedProjectCards}
-        </motion.div>
+        </MotionDiv>
 
-        <motion.div className='grid gap-6 md:grid-cols-2 grid-cols-1' {...staggerAnimationProps}>
+        <MotionDiv className='grid gap-6 md:grid-cols-2 grid-cols-1' {...staggerAnimationProps}>
           {nonHighlightedProjectCards}
-        </motion.div>
+        </MotionDiv>
       </div>
 
       <ProjectListBottomNav />
