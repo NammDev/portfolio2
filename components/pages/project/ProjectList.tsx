@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { childAnimationProps, staggerAnimationProps } from '@/constants/animation'
 import ProjectListBottomNav from './BottomNav'
 import ProjectDetailWrapper from '@/components/projects/detail'
-import { featuredProjects } from '@/constants/project'
+import { featuredProjects } from '@/lib/constants/project'
 
 const ProjectList = () => {
   const highlightedProjects = featuredProjects.filter((project) => project.highlight)

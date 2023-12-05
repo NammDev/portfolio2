@@ -3,16 +3,16 @@
 import React from 'react'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { motion } from 'framer-motion'
-import { Project } from '@/types/project'
 
 // import { EVENT_TYPE_NAVIGATE } from '~/lib/constants/tracking'
 // import { handleRouteBack } from '~/lib/utils/handleRouteBack'
 // import { trackEvent } from '~/lib/utils/trackEvent'
 import ProjectDetailWrapper from '../detail'
 import { childAnimationProps, staggerAnimationProps } from '@/constants/animation'
-import { sortedProjects } from '@/constants/project'
 import { splitProjectByTypes } from '@/lib/utils/project'
 import Link from 'next/link'
+import { Project } from '@/.contentlayer/generated'
+import { sortedProjects } from '@/lib/constants/project'
 
 const renderProjectList = ({
   projects,
