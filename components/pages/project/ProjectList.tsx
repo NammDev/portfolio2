@@ -1,5 +1,4 @@
 import { MotionDiv } from '@/components/motion/MotionDiv'
-
 import { childAnimationProps, staggerAnimationProps } from '@/constants/animation'
 import ProjectListBottomNav from './BottomNav'
 import ProjectDetailWrapper from '@/components/projects/detail'

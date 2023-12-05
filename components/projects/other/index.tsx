@@ -1,5 +1,3 @@
-'use client'
-
 import React from 'react'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 
