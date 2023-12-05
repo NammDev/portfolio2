@@ -1,7 +1,7 @@
 import HeroSection from '@/components/pages/home/HeroSection'
 import PostsSection from '@/components/pages/home/PostsSection'
 import ProjectsSection from '@/components/pages/home/ProjectsSection'
-import { highlightedProjects } from '@/constants/project'
+import { highlightedProjects } from '@/lib/constants/project'
 
 export const dynamic = 'force-static'
 

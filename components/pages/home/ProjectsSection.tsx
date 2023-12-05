@@ -1,7 +1,7 @@
 'use client'
 
+import { Project } from '@/.contentlayer/generated'
 import Card from '@/components/projects/Card'
-import { Project } from '@/types/project'
 // import { Box, Button, Grid, Heading, Stack } from '@chakra-ui/react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
