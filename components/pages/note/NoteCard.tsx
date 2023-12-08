@@ -32,7 +32,7 @@ const NoteCard = ({ data, noteViewCounts }: NoteCardProps) => {
 
   return (
     <Link
-      className='flex flex-col justify-between bg-transparent cursor-pointer gap-4 p-8 h-full border-2  rounded-3xl border-[#414042] hover:shadow-lg hover:border-[#676668] hover:bg-[##272628] transition-all ease-out'
+      className='flex flex-col justify-between bg-transparent cursor-pointer gap-4 p-8 h-full border-2  rounded-3xl border-[#414042] hover:shadow-lg hover:border-[#676668] hover:bg-[#272628] transition-all ease-out'
       href={`/notes/${data.id}`}
       aria-label={`Open ${data.title} note`}
     >
@@ -49,7 +49,7 @@ const NoteCard = ({ data, noteViewCounts }: NoteCardProps) => {
         <div className='flex gap-2 flex-wrap font-sans leading-[1]'>
           {data.tags?.map((tag) => (
             <p
-              className='border border-teal-400 py-0.5 px-2 rounded-3xl transition-all ease-out hover:text-teal-400 hover:border-teal-400 hover:bg-gray-50 text-xs !leading-[18px]'
+              className='border text-[#38B2AC] py-0.5 px-2 rounded-xl transition-all ease-out text-xs !leading-[18px]'
               key={tag}
             >
               {tag}

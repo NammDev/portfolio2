@@ -77,7 +77,7 @@
   --background-start-rgb: #1a1a1a;
   --background-end-rgb: #1a1a1a;
   --chakra-colors-chakra-placeholder-color: #414042;
-  --chakra-colors-chakra-border-color: #e2e8f0;
+  --chakra-colors-chakra-border-color: rgba(255, 255, 255, 0.16);
 }
 
 @media (prefers-color-scheme: dark) {
