@@ -6,6 +6,7 @@ import { sortedNotes } from '@/lib/constants/note'
 // import debounce from 'lodash-es/debounce'
 import React from 'react'
 import NoteCard from './NoteCard'
+import PostSearch from '@/components/shared/PostSearch'
 
 // import NoteCard from '~/lib/components/notes/NoteCard'
 // import PostSearch from '~/lib/components/shared/PostSearch'
@@ -43,9 +44,13 @@ const NoteListWrapper = ({ noteViewCounts }: NoteListWrapperProps) => {
   //   }, 150),
   //   []
   // )
+
+  const handleChangeKeyword = function (event: React.ChangeEvent<HTMLInputElement>) {
+    setKeyword(event.target.value)
+  }
   return (
     <>
-      {/* <PostSearch keyword={keyword} onChange={handleChangeKeyword} placeholder='Search Note' /> */}
+      <PostSearch keyword={keyword} onChange={handleChangeKeyword} placeholder='Search Note' />
 
       <MotionDiv className='grid gap-6 grid-cols-1 md:grid-cols-2' {...staggerAnimationProps}>
         {filteredNotes.map((item) => (
