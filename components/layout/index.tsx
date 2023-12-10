@@ -17,7 +17,7 @@ const Layout = ({ children }: LayoutProps) => {
   //   useCommandCenter()
 
   return (
-    <div className='bg-background text-foreground min-h-screen pb-16 md:pb-160 pt-24 transition duration-400 ease-out'>
+    <div className='bg-background font-sans text-foreground min-h-screen pb-16 md:pb-160 pt-24 transition duration-400 ease-out'>
       <Header />
       <div className='flex flex-col items-center relative z-10 space-y-8'>
         <main className='layoutBlock'>{children}</main>

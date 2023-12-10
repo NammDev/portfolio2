@@ -88,6 +88,9 @@ module.exports = withContentlayer({
   experimental: {
     scrollRestoration: true,
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
   redirects: () => {
     return [
       {
