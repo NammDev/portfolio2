@@ -1,11 +1,12 @@
 'use client'
 
-import { childAnimationProps, staggerAnimationProps } from '@/constants/animation'
+import { staggerAnimationProps } from '@/constants/animation'
 import { sortedBlogPosts } from '@/lib/constants/blog'
 // import debounce from 'lodash-es/debounce'
 import * as React from 'react'
 import BlogPostCard from './BlogPostCard'
 import { MotionDiv } from '@/components/motion/MotionDiv'
+import PostSearch from '@/components/shared/PostSearch'
 
 // import PostSearch from '~/lib/components/shared/PostSearch'
 // import type { ViewCounts } from '~/lib/services/db/views'
@@ -28,10 +29,13 @@ const BlogPostListWrapper = ({ blogViewCounts }: BlogPostListWrapperProps) => {
   //   }, 150),
   //   []
   // )
+  const handleChangeKeyword = function (event: React.ChangeEvent<HTMLInputElement>) {
+    setKeyword(event.target.value)
+  }
 
   return (
     <>
-      {/* <PostSearch keyword={keyword} onChange={handleChangeKeyword} placeholder='Search Post' /> */}
+      <PostSearch keyword={keyword} onChange={handleChangeKeyword} placeholder='Search Post' />
 
       <MotionDiv className='grid gap-16 md:grid-cols-2 my-12' {...staggerAnimationProps}>
         {!filteredPosts.length && <p className='font-sans'>No posts found.</p>}
