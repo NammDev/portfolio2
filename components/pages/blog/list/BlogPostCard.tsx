@@ -3,7 +3,7 @@ import * as React from 'react'
 import Balancer from 'react-wrap-balancer'
 
 import type { Blog } from 'contentlayer/generated'
-import ViewCounter from '../note/ViewCounter'
+import ViewCounter from '../../note/ViewCounter'
 import { dateFormatLong } from '@/lib/dateFormat'
 import { MotionDiv } from '@/components/motion/MotionDiv'
 import Image from 'next/image'
