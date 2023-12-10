@@ -58,6 +58,7 @@ const NoteCard = ({ data, noteViewCounts }: NoteCardProps) => {
         </div>
 
         <ViewCounter
+          As={'p'}
           className='text-xs !leading-[18px]'
           slug={`/notes/${data.id}`}
           count={viewCount}

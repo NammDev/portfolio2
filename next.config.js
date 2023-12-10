@@ -60,6 +60,14 @@ const securityHeaders = [
 
 /** @type {import('next').NextConfig} */
 module.exports = withContentlayer({
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
+  },
   reactStrictMode: true,
   headers: async () => {
     return [
