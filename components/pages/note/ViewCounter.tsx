@@ -8,7 +8,7 @@ export type ViewCounterProps = {
   count: number | null
   slug: string
   trackView?: boolean
-  As: React.ElementType
+  As?: React.ElementType
 } & React.HTMLAttributes<HTMLElement>
 
 const ViewCounter = ({ count, slug, trackView, As, ...props }: ViewCounterProps) => {
@@ -19,7 +19,9 @@ const ViewCounter = ({ count, slug, trackView, As, ...props }: ViewCounterProps)
   //     // eslint-disable-next-line react-hooks/exhaustive-deps
   //   }, [])
 
-  return <As {...props}>{`${(count ?? 0).toLocaleString()} views`}</As>
+  const Text = As ? As : 'p'
+
+  return <Text {...props}>{`${(count ?? 0).toLocaleString()} views`}</Text>
 }
 
 export default ViewCounter
