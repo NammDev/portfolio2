@@ -1,10 +1,7 @@
 import { notFound } from 'next/navigation'
 
-// import BlogPostHead from '~/lib/components/blog/post/Head'
 // import BlogPostMeta from '~/lib/components/blog/post/Meta'
 // import GiscusWrapper from '~/lib/components/shared/GiscusWrapper'
-// import MarkdownContent from '~/lib/components/shared/MarkdownContent'
-// import ShareButtons from '~/lib/components/shared/ShareButtons'
 
 import type { BlogPostProps } from './types'
 import { sortedBlogPosts } from '@/lib/constants/blog'
@@ -12,6 +9,7 @@ import { unsplashImg } from '@/lib/utils/unsplashImg'
 import BlogPostHead from './BlogPostHead'
 import Image from 'next/image'
 import MarkdownContent from '@/components/shared/MarkdownContent'
+import ShareButtons from '@/components/shared/ShareButtons'
 
 const BlogPost = ({ params }: BlogPostProps) => {
   const postData = sortedBlogPosts.find(({ id }) => id === params.id)
@@ -33,10 +31,10 @@ const BlogPost = ({ params }: BlogPostProps) => {
       </div>
       <BlogPostHead postData={postData} />
       <MarkdownContent rawContent={postData.body.raw} />
-      {/* <Grid marginY={12} gap={8}>
+      <div className='grid gap-8 my-12'>
         <ShareButtons title={`Check out this blog post: ${postData.title}`} />
-        <GiscusWrapper category='Blog Post' categoryId='DIC_kwDOD-UOjM4B_fhR' />
-      </Grid> */}
+        {/* <GiscusWrapper category='Blog Post' categoryId='DIC_kwDOD-UOjM4B_fhR' /> */}
+      </div>
     </article>
   )
 }

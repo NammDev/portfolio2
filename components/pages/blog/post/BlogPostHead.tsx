@@ -3,6 +3,7 @@ import Balancer from 'react-wrap-balancer'
 import type { Blog } from 'contentlayer/generated'
 import { dateFormatLong } from '@/lib/dateFormat'
 import DetailViewCounts from '@/components/shared/DetailViewCounts'
+import ShareButtons from '@/components/shared/ShareButtons'
 // import DetailViewCounts from '~/lib/components/shared/DetailViewCounts'
 // import ShareButtons from '~/lib/components/shared/ShareButtons'
 // import { dateFormatLong } from '~/lib/utils/dateFormat'
@@ -28,7 +29,7 @@ const BlogPostHead = ({ postData }: BlogPostHeadProps) => {
         </div>
       </div>
 
-      {/* <ShareButtons title={`Check out this blog post: ${postData.title}`} /> */}
+      <ShareButtons title={`Check out this blog post: ${postData.title}`} />
     </div>
   )
 }
