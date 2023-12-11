@@ -1,17 +1,18 @@
 import type { Components } from 'react-markdown'
 
-// import CodeBlock from './CodeBlock'
+import CodeBlock from './CodeBlock'
 import HeadingLink from './HeadingLink'
+import Link from 'next/link'
 
 export const renderers: Components = {
-  // code: CodeBlock,
-  // a: ({ href, children }) => {
-  //   return (
-  //     <ChakraLink href={href} isExternal wordBreak='break-word'>
-  //       {children}
-  //     </ChakraLink>
-  //   )
-  // },
+  code: CodeBlock,
+  a: ({ href, children }) => {
+    return (
+      <Link href={href || ''} target='_blank' className='break-words'>
+        {children}
+      </Link>
+    )
+  },
   h1: ({ children }) => (
     <HeadingLink level={1} As='h1'>
       {String(children)}

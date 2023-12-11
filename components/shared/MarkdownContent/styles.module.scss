@@ -23,6 +23,25 @@
     }
   }
 
+  ol li {
+    list-style: decimal;
+  }
+
+  ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+  }
+
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+  }
+
   code {
     background-color: rgb(200, 200, 200);
     border-radius: 0.25rem;
