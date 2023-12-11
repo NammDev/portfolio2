@@ -13,6 +13,7 @@ const fontBody = FontBody({
   subsets: ['latin'],
   variable: '--font-body',
   display: 'swap',
+  adjustFontFallback: false,
 })
 
 const creator = 'Namm'
