@@ -27,7 +27,7 @@ const NoteList = async () => {
             className='transition-all items-center inline-flex appearance-none justify-center select-none border-2 relative whitespace-nowrap outline-none outline-offset-2 leading-[1.2] font-semibold h-8 text-[rgba(255,255,255,0.92)] rounded-2xl border-[rgba(255,255,255,0.16)] ps-3 pe-3 hover:border-gray-500 hover:shadow-sm hover:bg-[#ffffff14] text-sm'
             href='/til'
           >
-            T.I.L.
+            Today I Learned
           </Link>
         </div>
       </div>
