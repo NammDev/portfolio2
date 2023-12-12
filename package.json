@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@opentelemetry/api": "^1.4.0",
     "clsx": "^2.0.0",
     "contentlayer": "^0.3.4",
     "date-fns": "^2.30.0",
@@ -16,6 +17,7 @@
     "lodash-es": "^4.17.21",
     "next": "latest",
     "next-contentlayer": "^0.3.4",
+    "next13-progressbar": "^1.1.1",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^4.12.0",
@@ -25,8 +27,7 @@
     "reading-time": "^1.5.0",
     "remark-gfm": "^3.0.1",
     "sass": "^1.69.5",
-    "tailwind-merge": "^2.0.0",
-    "@opentelemetry/api": "^1.4.0"
+    "tailwind-merge": "^2.0.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
