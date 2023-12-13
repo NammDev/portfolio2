@@ -73,27 +73,41 @@
 }
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: #1a1a1a;
-  --background-end-rgb: #1a1a1a;
-  --chakra-colors-chakra-placeholder-color: #414042;
-  --chakra-colors-chakra-border-color: rgba(255, 255, 255, 0.16);
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --headerAlphaBackground: rgba(236, 236, 236, 0.8);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #1a1a1a;
-    --foreground: #d9d9d9;
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: #1a1a1a;
-    --background-end-rgb: #1a1a1a;
-  }
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: #1a1a1a;
+  --background-end-rgb: #1a1a1a;
+
+  --background: #1a1a1a;
+  --foreground: rgba(255, 255, 255, 0.92);
+  --headeralphabackground: rgba(26, 26, 26, 0.8);
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
     rgb(var(--background-start-rgb));
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  margin: 0;
+  font-feature-settings: 'kern';
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  transition-property: background-color;
+  transition-duration: 200ms;
+  line-height: 1.5;
+  overflow-y: scroll;
 }
 
 html {
@@ -104,13 +118,6 @@ html {
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   touch-action: manipulation;
-}
-
-body {
-  position: relative;
-  min-height: 100%;
-  margin: 0;
-  font-feature-settings: 'kern';
 }
 
 :where(*, *::before, *::after) {
@@ -355,15 +362,6 @@ select::-ms-expand {
   :host {
     --chakra-vh: 100dvh;
   }
-}
-
-body {
-  color: #1a1a1a;
-  background: var(--background);
-  transition-property: background-color;
-  transition-duration: 200ms;
-  line-height: 1.5;
-  overflow-y: scroll;
 }
 
 *::-webkit-input-placeholder {

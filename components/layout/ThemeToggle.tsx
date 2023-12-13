@@ -1,5 +1,6 @@
 'use client'
 
+import { useTheme } from 'next-themes'
 import * as React from 'react'
 import { RiMoonFill, RiSunFill } from 'react-icons/ri'
 
@@ -7,10 +8,8 @@ import { RiMoonFill, RiSunFill } from 'react-icons/ri'
 // import { trackEvent } from '~/lib/utils/trackEvent'
 
 const ThemeToggle = () => {
-  //   const { colorMode, toggleColorMode } = useColorMode()
-  //   const toggleIcon = useColorModeValue(<RiMoonFill />, <RiSunFill />)
   const [mounted, setMounted] = React.useState(false)
-  const [theme, setTheme] = React.useState('')
+  const { theme, setTheme } = useTheme()
 
   React.useEffect(() => {
     setMounted(true)
