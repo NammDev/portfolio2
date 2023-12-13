@@ -32,7 +32,7 @@ const NoteCard = ({ data, noteViewCounts }: NoteCardProps) => {
 
   return (
     <Link
-      className='flex flex-col justify-between bg-transparent cursor-pointer gap-4 p-8 h-full border-2  rounded-3xl border-[#414042] hover:shadow-lg hover:border-[#676668] hover:bg-[#272628] transition-all ease-out'
+      className='flex flex-col justify-between bg-transparent cursor-pointer gap-4 p-8 h-full border-2  rounded-3xl border-cardBorder1 hover:shadow-lg hover:border-cardBorderHover1 dark:hover:bg-[#272628] transition-all ease-out'
       href={`/notes/${data.id}`}
       aria-label={`Open ${data.title} note`}
     >

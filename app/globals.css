@@ -47,10 +47,9 @@
     min-width: 2.5rem;
     padding-inline-start: 1rem;
     padding-inline-end: 1rem;
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--buttonBackground1);
+    color: var(--buttonForeground1);
     padding: 0px;
-    background-color: transparent;
-    color: unset;
     flex-basis: 25%;
     border-color: gray;
   }
@@ -73,19 +72,50 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #1a1a1a;
+  --chakra-colors-chakra-placeholder-color: rgba(255, 255, 255, 0.24);
+  --background-start-rgb: #ececec;
+  --background-end-rgb: #ececec;
+
+  --background: #ececec;
+  --foreground: #0d0d0d;
   --headerAlphaBackground: rgba(236, 236, 236, 0.8);
+
+  --border-color: #b3b3b3;
+
+  --buttonBackground1: #d9d9d9;
+  --buttonForeground1: #1a1a1a;
+  --buttonHover1: #b3b3b3;
+  --buttonHoverBorder1: #808080;
+
+  --cardBorder: #d9d9d9;
+  --cardBorderHover: #808080;
+
+  --cardBorder1: #b3b3b3;
+  --cardBorderHover1: #444148;
 }
 
 .dark {
+  --chakra-colors-chakra-placeholder-color: #414042;
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: #1a1a1a;
   --background-end-rgb: #1a1a1a;
 
   --background: #1a1a1a;
   --foreground: rgba(255, 255, 255, 0.92);
-  --headeralphabackground: rgba(26, 26, 26, 0.8);
+  --headerAlphaBackground: rgba(26, 26, 26, 0.8);
+
+  --border-color: rgba(255, 255, 255, 0.16);
+
+  --buttonBackground1: rgba(255, 255, 255, 0.08);
+  --buttonForeground1: rgba(255, 255, 255, 0.92);
+  --buttonHover1: rgba(255, 255, 255, 0.16);
+  --buttonHoverBorder1: #808080;
+
+  --cardBorder: #272628;
+  --cardBorderHover: #ffffff;
+
+  --cardBorder1: #414042;
+  --cardBorderHover1: #676668;
 }
 
 body {
@@ -338,7 +368,7 @@ select::-ms-expand {
   display: none;
 }
 
-:root,
+/* :root,
 :host {
   --chakra-vh: 100vh;
 }
@@ -362,7 +392,7 @@ select::-ms-expand {
   :host {
     --chakra-vh: 100dvh;
   }
-}
+} */
 
 *::-webkit-input-placeholder {
   color: var(--chakra-colors-chakra-placeholder-color);
@@ -383,22 +413,28 @@ select::-ms-expand {
 *,
 *::before,
 ::after {
-  border-color: var(--chakra-colors-chakra-border-color);
+  border-color: var(--border-color);
 }
 
 ::-webkit-scrollbar {
   width: 0.75rem;
   height: 0.75rem;
-  background-color: var(--chakra-colors-black);
+  background-color: #101112;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: var(--chakra-radii-full);
-  background-color: var(--chakra-colors-gray-700);
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  background-color: #2d3748;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--chakra-colors-gray-600);
+  background-color: #1c2a41;
 }
 
 html {

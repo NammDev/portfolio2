@@ -3,17 +3,18 @@ import Image from 'next/image'
 import Balancer from 'react-wrap-balancer'
 
 import type { ProjectDetailWrapperProps } from './types'
+import { useTheme } from 'next-themes'
 
 type ProjectDetailContentProps = Pick<ProjectDetailWrapperProps, 'projectData'>
 
 const ProjectDetailContent = ({
   projectData: { title, icon, description, stacks },
 }: ProjectDetailContentProps) => {
-  const colorMode = 'dark'
-  //   const backgroundColor = useColorModeValue('', 'gray.700')
+  const { theme } = useTheme()
+  const colorMode = theme === 'dark' ? 'dark' : 'light'
 
   return (
-    <div className='w-full h-full p-8 rounded-3xl border-2 border-[#414042] transition duration-200 ease-out hover:shadow-lg hover:border-[#676668] hover:bg-[#272628]'>
+    <div className='w-full h-full p-8 rounded-3xl border-2 border-cardBorder1 transition duration-200 ease-out hover:shadow-lg hover:border-cardBorderHover1 dark:hover:bg-[#272628]'>
       <div className='flex items-center w-full h-full gap-8'>
         <div className='flex flex-wrap gap-6 basis-[85%] h-full'>
           <div className='flexs items-start w-full'>
@@ -31,7 +32,7 @@ const ProjectDetailContent = ({
                 <div
                   className='mr-3'
                   key={stack}
-                  style={{ filter: 'drop-shadow(0 0 12px rgb(98, 114, 164))' }}
+                  style={{ filter: 'drop-shadow(rgb(98, 114, 164) 0px 0px 12px)' }}
                 >
                   <Image
                     width={25}

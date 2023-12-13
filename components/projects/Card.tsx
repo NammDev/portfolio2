@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import * as React from 'react'
-import { Project } from '@/types/project'
 import Link from 'next/link'
+import { Project } from '@/.contentlayer/generated'
 
 // import type { Project } from 'contentlayer/generated'
 // import { EVENT_TYPE_LINK } from '~/lib/constants/tracking'
@@ -31,7 +31,7 @@ const Card = ({
       className='group transition-all cursor-pointer no-underline outline-none outline-offset-2 text-inherit'
       aria-label={`Link to ${title}`}
     >
-      <div className='hover:border-white hover:shadow-md shadow-sm rounded-[20px] border-gray-800 border-2 cursor-pointer relative block items-center justify-center overflow-hidden transition duration-500 ease-out'>
+      <div className='shadow-sm rounded-[20px] border-cardBorder border-2 cursor-pointer relative block items-center justify-center overflow-hidden transition-all duration-500 ease-out hover:border-cardBorderHover hover:shadow-xl'>
         {thumbnail && (
           <div className='h-[200px] sm:h-[250px] md:h-[200px]'>
             <Image

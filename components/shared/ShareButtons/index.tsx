@@ -47,7 +47,7 @@ const ShareButtons = ({ title }: ShareButtonsProps) => {
     <div className='flex items-center flex-row gap-2 my-2'>
       {socialMap({ title, url: link }).map(({ name, icon, baseSocialUrl, params, isCopy }) => (
         <button
-          className='iconButton !basis-auto !bg-[rgba(255,255,255,0.08)]'
+          className='iconButton !basis-auto'
           aria-label={name}
           key={name}
           onClick={handleClick({ baseSocialUrl, params, isCopy })}

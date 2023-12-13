@@ -43,7 +43,7 @@ const Header = () => {
             <div className='flex gap-2'>
               <button
                 aria-label='command-center'
-                className='iconButton'
+                className='iconButton !bg-transparent !text-[unset]'
                 // onClick={handleOpenCommandCenter}
               >
                 <RiCommandFill />

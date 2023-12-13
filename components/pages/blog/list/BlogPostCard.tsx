@@ -65,7 +65,7 @@ const BlogPostCard = ({ postData, blogViewCounts }: BlogPostCardProps) => {
           <h2 className='font-heading mb-2 font-bold text-lg'>
             <Balancer>{postData.title}</Balancer>
           </h2>
-          <p className='font-sans text-xs text-gray-50'>
+          <p className='font-sans text-xs text-[#808080]'>
             {dateFormatLong(postData.date)} - {postData.readTime?.text}
             {' | '}
             <ViewCounter slug={`/blog/${postData.id}`} count={viewCount} As='span' />

@@ -10,7 +10,7 @@ const PostSearch = ({ keyword, onChange, placeholder = 'Search' }: PostSearchPro
   return (
     <div className='w-full flex relative isolate'>
       <input
-        className='w-full px-4 py-2 rounded-md bg-[rgba(255,255,255,0.04)] focus:outline-none focus-visible:bg-transparent focus-visible:border-[rgb(99,179,237)] border-2 border-transparent font-sans'
+        className='w-full ps-4 pe-10 rounded-md bg-buttonBackground1 dark:bg-[rgba(255,255,255,0.04)] focus:outline-none focus-visible:bg-transparent focus-visible:border-[rgb(99,179,237)] border-2 border-transparent font-sans text-[1rem] h-10 transition-all outline-offset-2 relative appearance-none text-foreground'
         type='text'
         defaultValue={keyword}
         onChange={onChange}

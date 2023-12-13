@@ -17,7 +17,15 @@ const config: Config = {
       colors: {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
-        headerAlphaBackground: 'rgba(26, 26, 26, 0.8);',
+        headerAlphaBackground: 'var(--headerAlphaBackground)',
+        buttonBackground1: 'var(--buttonBackground1)',
+        buttonForeground1: 'var(--buttonForeground1)',
+        buttonHover1: 'var(--buttonHover1)',
+        buttonHoverBorder1: 'var(--buttonHoverBorder1)',
+        cardBorder: 'var(--cardBorder)',
+        cardBorderHover: 'var(--cardBorderHover)',
+        cardBorder1: 'var(--cardBorder1)',
+        cardBorderHover1: 'var(--cardBorderHover1)',
       },
       fontFamily: {
         sans: ['var(--font-body)'],

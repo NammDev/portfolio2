@@ -26,7 +26,7 @@ const BlogPostPreview = ({ postData }: BlogPostPreviewProps) => {
 
   return (
     <div>
-      <div className='w-full duration-400 ease-out hover:text-[#ececec] text-[#ebebeb] hover:underline'>
+      <div className='w-full duration-400 ease-out hover:text-[#8d8c8e] dark:hover:text-[#ececec] hover:underline'>
         <Link href={`/blog`} className='flex-wrap items-center w-full'>
           <h2 className='mb-2 leading-[1.2] text-[1.25rem] font-bold font-heading'>
             {postData.title}

@@ -17,7 +17,7 @@ const Footer = () => {
     <footer className='layoutBlock gap-8 flex flex-col'>
       <hr
         aria-orientation='horizontal'
-        className='opacity-60 w-full border-0 border-[#ffffff29] border-solid border-b'
+        className='opacity-60 w-full border-0 border-solid border-b'
       />
       {/* <div target='_blank' className='css-1gma6c2'>
         <svg
