@@ -95,6 +95,9 @@
   --cardBorderHover1: #444148;
 
   --tabBar: rgba(217, 217, 217, 0.8);
+
+  --trackColor: #fafafa;
+  --thumbColor: #272c35;
 }
 
 .dark {
@@ -122,6 +125,9 @@
   --cardBorderHover1: #676668;
 
   --tabBar: rgba(39, 38, 40, 0.8);
+
+  --trackColor: #101112;
+  --thumbColor: #2d3748;
 }
 
 body {
@@ -423,27 +429,26 @@ select::-ms-expand {
 }
 
 ::-webkit-scrollbar {
-  width: 0.75rem;
-  height: 0.75rem;
-  background-color: #101112;
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar:vertical {
+  width: 8px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
+  border-radius: 4px;
+  background-color: var(--trackColor);
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-  background-color: #2d3748;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #1c2a41;
+  border-radius: 4px;
+  background-color: var(--thumbColor);
 }
 
 html {
   scrollbar-width: thin;
-  scrollbar-color: #2d3748 black;
+  scrollbar-color: var(--thumbColor) var(--trackColor);
 }
