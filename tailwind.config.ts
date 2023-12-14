@@ -26,6 +26,7 @@ const config: Config = {
         cardBorderHover: 'var(--cardBorderHover)',
         cardBorder1: 'var(--cardBorder1)',
         cardBorderHover1: 'var(--cardBorderHover1)',
+        tabBar: 'var(--tabBar)',
       },
       fontFamily: {
         sans: ['var(--font-body)'],

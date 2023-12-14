@@ -35,7 +35,7 @@ const ThemeToggle = () => {
       <button
         aria-label='toggle theme mode'
         onClick={handleClickToggle}
-        className='iconButton !bg-transparent !text-[unset]'
+        className='bg-transparent text-[unset] iconButton'
       >
         {theme === 'light' ? <RiMoonFill /> : <RiSunFill />}
       </button>

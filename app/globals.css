@@ -25,7 +25,7 @@
   }
 }
 
-@layer utilities {
+@layer components {
   .iconButton {
     display: inline-flex;
     appearance: none;
@@ -59,11 +59,11 @@
     border-color: gray;
     border-width: 2px;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--buttonHover1);
   }
 
   .iconButton:active {
-    background: rgba(255, 255, 255, 0.24);
+    background: var(--buttonActive);
   }
 
   .iconButton:focus-visible {
@@ -86,12 +86,15 @@
   --buttonForeground1: #1a1a1a;
   --buttonHover1: #b3b3b3;
   --buttonHoverBorder1: #808080;
+  --buttonActive: rgba(255, 255, 255, 0.24);
 
   --cardBorder: #d9d9d9;
   --cardBorderHover: #808080;
 
   --cardBorder1: #b3b3b3;
   --cardBorderHover1: #444148;
+
+  --tabBar: rgba(217, 217, 217, 0.8);
 }
 
 .dark {
@@ -110,12 +113,15 @@
   --buttonForeground1: rgba(255, 255, 255, 0.92);
   --buttonHover1: rgba(255, 255, 255, 0.16);
   --buttonHoverBorder1: #808080;
+  --buttonActive: #8d8c8e;
 
   --cardBorder: #272628;
   --cardBorderHover: #ffffff;
 
   --cardBorder1: #414042;
   --cardBorderHover1: #676668;
+
+  --tabBar: rgba(39, 38, 40, 0.8);
 }
 
 body {
