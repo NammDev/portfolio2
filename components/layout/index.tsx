@@ -22,7 +22,7 @@ const Layout = ({ children }: LayoutProps) => {
     <ThemeProvider attribute='class' enableSystem={true}>
       <div className='bg-background font-sans text-foreground min-h-screen pb-16 md:pb-160 pt-24 transition duration-400 ease-out'>
         <Next13ProgressBar
-          height='2px'
+          height='3px'
           color='#4A5568'
           options={{ showSpinner: false }}
           showOnShallow
