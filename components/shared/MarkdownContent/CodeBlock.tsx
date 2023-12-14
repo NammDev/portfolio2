@@ -1,3 +1,4 @@
+import { useTheme } from 'next-themes'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { dracula, oneLight } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
@@ -23,6 +24,8 @@ const CodeBlock = ({ className, children, ...props }: React.HTMLAttributes<HTMLE
   const match = /language-(\w+)/.exec(className || '')
   const language = match?.[1]
   const childrenValue = String(children).replace(/\n$/, '')
+  const { theme } = useTheme()
+  const style = theme === 'dark' ? dracula : oneLight
 
   return match ? (
     <div className='w-full'>
@@ -35,7 +38,7 @@ const CodeBlock = ({ className, children, ...props }: React.HTMLAttributes<HTMLE
           Copy
         </button>
       </div>
-      <SyntaxHighlighter language={language} style={dracula} showLineNumbers={false}>
+      <SyntaxHighlighter language={language} style={style} showLineNumbers={false}>
         {childrenValue}
       </SyntaxHighlighter>
     </div>
