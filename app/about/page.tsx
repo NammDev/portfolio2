@@ -1,8 +1,8 @@
 import Content from '@/components/pages/about/Content'
 import Links from '@/components/pages/about/Links'
 import HeadSection from '@/components/pages/about/HeadSection'
-// import Testimony from '@/components/pages/about/Testimony'
 import type { Metadata } from 'next'
+import Testimony from '@/components/pages/about/Testimony copy'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -20,7 +20,7 @@ const About = () => {
       <HeadSection />
       <Content />
       <Links />
-      {/* <Testimony /> */}
+      <Testimony />
     </>
   )
 }
