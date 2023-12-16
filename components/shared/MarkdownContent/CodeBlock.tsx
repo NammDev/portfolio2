@@ -16,7 +16,8 @@ const CodeBlock = ({ className, children, ...props }: React.HTMLAttributes<HTMLE
   const handleClickCopy = (childrenValue: string) => async () => {
     await navigator.clipboard.writeText(childrenValue)
     toast({
-      description: 'Your message has been Copied.',
+      variant: 'custom',
+      description: 'Code block has been Copied!',
     })
   }
 
