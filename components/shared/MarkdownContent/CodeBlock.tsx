@@ -1,23 +1,9 @@
+import { useToast } from '@/components/ui/use-toast'
 import { useTheme } from 'next-themes'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { dracula, oneLight } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 // const { toast } = createStandaloneToast()
-
-const handleClickCopy = (childrenValue: string) => async () => {
-  const toastId = childrenValue.substring(0, 10)
-
-  await navigator.clipboard.writeText(childrenValue)
-  // if (!toast.isActive(toastId)) {
-  //   toast({
-  //     id: toastId,
-  //     status: 'success',
-  //     position: 'top-right',
-  //     title: 'Copied',
-  //     isClosable: true,
-  //   })
-  // }
-}
 
 const CodeBlock = ({ className, children, ...props }: React.HTMLAttributes<HTMLElement>) => {
   /** https://github.com/remarkjs/react-markdown#use-custom-components-syntax-highlight */
@@ -26,6 +12,13 @@ const CodeBlock = ({ className, children, ...props }: React.HTMLAttributes<HTMLE
   const childrenValue = String(children).replace(/\n$/, '')
   const { theme } = useTheme()
   const style = theme === 'dark' ? dracula : oneLight
+  const { toast } = useToast()
+  const handleClickCopy = (childrenValue: string) => async () => {
+    await navigator.clipboard.writeText(childrenValue)
+    toast({
+      description: 'Your message has been Copied.',
+    })
+  }
 
   return match ? (
     <div className='w-full'>
