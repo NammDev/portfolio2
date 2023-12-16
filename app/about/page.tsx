@@ -2,7 +2,7 @@ import Content from '@/components/pages/about/Content'
 import Links from '@/components/pages/about/Links'
 import HeadSection from '@/components/pages/about/HeadSection'
 import type { Metadata } from 'next'
-import Testimony from '@/components/pages/about/Testimony copy'
+import Testimony from '@/components/pages/about/Testimony'
 
 export const metadata: Metadata = {
   title: 'About',

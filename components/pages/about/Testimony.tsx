@@ -1,93 +1,79 @@
 'use client'
 
-import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Box,
-  Flex,
-  Heading,
-  IconButton,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react'
+import { MotionDiv } from '@/components/motion/MotionDiv'
+import { staggerAnimationProps, wrapperAnimationProps } from '@/constants/animation'
+import { sortedTestimonies } from '@/constants/testimony'
 import { FaLinkedin } from 'react-icons/fa'
 
-import MotionBox from '~/lib/components/motion/MotionBox'
-import MotionGrid from '~/lib/components/motion/MotionGrid'
-import { staggerAnimationProps, wrapperAnimationProps } from '~/lib/constants/animation'
-import { sortedTestimonies } from '~/lib/constants/testimony'
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion'
 
 const Testimony = () => {
-  const textColor = useColorModeValue('gray.600', 'gray.300')
+  // const textColor = useColorModeValue('gray.600', 'gray.300')
 
   return (
-    <MotionBox {...wrapperAnimationProps}>
-      <Accordion allowToggle paddingY={4} color={textColor}>
-        <AccordionItem border='none'>
-          <h3>
-            <AccordionButton paddingX={0}>
-              <Box as='span' flex={1} textAlign='left'>
-                <Heading size='sm'>Some Testimonies</Heading>
-                <Text fontSize='xs'>Wanna know what my peers said about me?</Text>
-              </Box>
-              <AccordionIcon />
-            </AccordionButton>
-          </h3>
-          <AccordionPanel paddingX={0}>
-            <MotionGrid
-              {...staggerAnimationProps}
-              gap={6}
-              gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }}
-            >
+    <MotionDiv {...wrapperAnimationProps}>
+      <Accordion
+        type='single'
+        collapsible
+        className='py-4 text-foreground2'
+        //  paddingY={4} color={textColor}
+      >
+        <AccordionItem value='item-1' className='border-none'>
+          <AccordionTrigger
+            className='py-2 w-full text-[1rem] hover:no-underline outline-offset-2'
+            //  paddingX={0}
+          >
+            <span className='block flex-1 text-left'>
+              <h2 className='text-[1rem] leading-[1.2] font-heading font-bold'>Some Testimonies</h2>
+              <p className='text-[0.75rem] leading-[18px] font-normal'>
+                Wanna know what my peers said about me?
+              </p>
+            </span>
+          </AccordionTrigger>
+
+          <AccordionContent
+            className='opacity-100 h-auto pt-2 pb-5'
+            //  paddingX={0}
+          >
+            <MotionDiv className='grid gap-6 grid-cols-1 md:grid-cols-2' {...staggerAnimationProps}>
               {sortedTestimonies.map((testimony) => (
-                <Box
-                  borderWidth={2}
-                  borderRadius={24}
-                  borderColor='cardBorder'
-                  transition='0.2s ease-out'
-                  _hover={{
-                    shadow: 'lg',
-                    borderColor: 'cardHoverBorder',
-                    borderWidth: 2,
-                  }}
-                  display='flex'
-                  flexDirection='column'
-                  justifyContent='space-between'
-                  gap={4}
-                  padding={6}
+                <div
+                  className='border-2 rounded-3xl hover:border-cardBorderHover1 border-cardBorder1 transition-all ease-out hover:shadow-lg hover:border-cardHoverBorder hover:border-2 flex flex-col justify-between p-6 gap-4'
                   key={testimony.id}
                 >
-                  <Text fontSize='sm'>{testimony.body.raw}</Text>
+                  <p className='text-[0.875rem] leading-[1.5]'>{testimony.body.raw}</p>
 
-                  <Flex gap={2} alignItems='center'>
-                    <Box>
-                      <Heading size='xs'>{testimony.name}</Heading>
-                      <Text fontSize='xs'>{testimony.title}</Text>
-                    </Box>
+                  <div className='flex gap-2 items-center leading-[1.5]'>
+                    <div>
+                      <h2 className='font-heading text-[0.875rem] leading-[1.2] font-bold'>
+                        {testimony.name}
+                      </h2>
+                      <p className='text-[0.75rem]'>{testimony.title}</p>
+                    </div>
                     {testimony.linkedin ? (
-                      <IconButton
-                        as='a'
-                        variant='ghost'
-                        size='sm'
-                        color={textColor}
+                      <a
+                        className='iconButton bg-transparent text-foreground2 h-8 min-w-[2rem] text-[0.875rem] p-0 !basis-0'
                         aria-label='linkedin'
-                        icon={<FaLinkedin />}
                         href={testimony.linkedin}
                         target='_blank'
                         rel='noopener noreferrer'
-                      />
+                      >
+                        <FaLinkedin />
+                      </a>
                     ) : null}
-                  </Flex>
-                </Box>
+                  </div>
+                </div>
               ))}
-            </MotionGrid>
-          </AccordionPanel>
+            </MotionDiv>
+          </AccordionContent>
         </AccordionItem>
       </Accordion>
-    </MotionBox>
+    </MotionDiv>
   )
 }
 

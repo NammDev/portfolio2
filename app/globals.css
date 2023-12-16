@@ -98,6 +98,8 @@
 
   --trackColor: #fafafa;
   --thumbColor: #272c35;
+
+  --foreground2: #343335;
 }
 
 .dark {
@@ -128,6 +130,8 @@
 
   --trackColor: #101112;
   --thumbColor: #2d3748;
+
+  --foreground2: #8d8c8e;
 }
 
 body {

@@ -21,7 +21,7 @@ const MotionLink = ({ platformName, url, icon: Icon }: MotionLinkProps) => {
   // }, [platformName, url])
 
   return (
-    <MotionDiv {...childAnimationProps}>
+    <MotionDiv className='h-[30.5px] text-foreground' {...childAnimationProps}>
       {/* <Tooltip label={platformName}> */}
       <Link
         className='transition-all cursor-pointer no-underline outline-none outline-offset-2 text-inherit font-sans'
