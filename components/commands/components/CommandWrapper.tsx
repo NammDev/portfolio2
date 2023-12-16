@@ -1,13 +1,12 @@
-import { Box } from '@chakra-ui/react';
-import { Command } from 'cmdk';
+import { Command } from 'cmdk'
 
-import ModalWrapper from '~/lib/components/shared/ModalWrapper';
+import ModalWrapper from '~/lib/components/shared/ModalWrapper'
 
 type CommandWrapperProps = {
-  isOpen: boolean;
-  onClose: () => void;
-  children: React.ReactNode;
-};
+  isOpen: boolean
+  onClose: () => void
+  children: React.ReactNode
+}
 
 const CommandWrapper = ({ isOpen, onClose, children }: CommandWrapperProps) => {
   return (
@@ -35,7 +34,7 @@ const CommandWrapper = ({ isOpen, onClose, children }: CommandWrapperProps) => {
         </Box>
       }
     />
-  );
-};
+  )
+}
 
-export default CommandWrapper;
+export default CommandWrapper

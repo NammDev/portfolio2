@@ -69,6 +69,53 @@
   .iconButton:focus-visible {
     box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
   }
+
+  .commandList {
+    padding-inline-start: 0.5rem;
+    padding-inline-end: 0.5rem;
+    height: 400px;
+    overflow: auto;
+    overscroll-behavior: contain;
+    transition: all 100ms ease 0s;
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+    scroll-padding-block-end: 12px;
+  }
+
+  .commandList [cmdk-list-sizer] {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .commandItem {
+    display: flex;
+    margin-left: 1.5rem;
+    min-height: 3rem;
+    cursor: pointer;
+    border-radius: 8px;
+    -webkit-box-align: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding-inline-start: 0.5rem;
+    padding-inline-end: 0.5rem;
+    user-select: none;
+    transition: all 150ms ease 0s;
+    content-visibility: auto;
+  }
+
+  .commandItem:first-of-type {
+    margin-top: 0.5rem;
+  }
+
+  .commandItem [aria-selected='true'] {
+    color: white;
+    background-color: var(--cardBorderHover1);
+  }
+
+  .commandItem [aria-disabled='true'] {
+    color: gray;
+    cursor: not-allowed;
+  }
 }
 
 :root {

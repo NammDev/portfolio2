@@ -1,47 +1,34 @@
-import { Flex, Text } from '@chakra-ui/react';
-import { Command } from 'cmdk';
-
-import type { CommandEntry } from '~/lib/components/commands/types';
+import { Command } from 'cmdk'
+import { CommandEntry } from '../types'
 
 type CommandItemProps = {
-  data: CommandEntry;
-  onSelect: () => void;
-};
+  data: CommandEntry
+  onSelect: () => void
+}
 
 const CommandItem = ({ data, onSelect }: CommandItemProps) => {
   return (
-    <Flex
-      as={Command.Item}
-      marginLeft={6}
+    <Command.Item
+      className='commandItem'
       onSelect={onSelect}
-      minHeight={12}
-      cursor="pointer"
-      borderRadius={8}
-      alignItems="center"
-      gap={2}
-      paddingX={2}
-      userSelect="none"
-      transition="all 150ms ease"
-      sx={{
-        contentVisibility: 'auto',
-        '&[aria-selected="true"]': {
-          color: 'white',
-          backgroundColor: 'selectedCommandItemBackground',
-        },
-        '&[aria-disabled="true"]': {
-          color: 'gray',
-          cursor: 'not-allowed',
-        },
-        '&:first-of-type': {
-          marginTop: 2,
-        },
-      }}
+      // sx={{
+      //   contentVisibility: 'auto',
+      //   '&[aria-selected="true"]': {
+      //     color: 'white',
+      //     backgroundColor: 'selectedCommandItemBackground',
+      //   },
+      //   '&[aria-disabled="true"]': {
+      //     color: 'gray',
+      //     cursor: 'not-allowed',
+      //   },
+      //   '&:first-of-type': {
+      //     marginTop: 2,
+      //   },
+      // }}
     >
-      <Text fontSize="sm" fontFamily="body">
-        {data.name}
-      </Text>
-    </Flex>
-  );
-};
+      <p className='text-sm font-sans'>{data.name}</p>
+    </Command.Item>
+  )
+}
 
-export default CommandItem;
+export default CommandItem

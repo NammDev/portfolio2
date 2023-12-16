@@ -1,33 +1,24 @@
-import { Box, Heading } from '@chakra-ui/react';
-import { Command } from 'cmdk';
-
-import type { CommandCollection } from '~/lib/components/commands/types';
+import { Command } from 'cmdk'
+import { CommandCollection } from '../types'
 
 type CommandGroupProps = {
-  children: React.ReactNode;
-  data: CommandCollection;
-};
+  children: React.ReactNode
+  data: CommandCollection
+}
 
 const CommandGroup = ({ children, data }: CommandGroupProps) => {
   return (
-    <Box
-      as={Command.Group}
-      marginBottom={4}
+    <Command.Group
+      className='mb-4'
       heading={
-        <Heading
-          fontSize="xs"
-          letterSpacing={2}
-          textTransform="uppercase"
-          paddingX={2}
-          userSelect="none"
-        >
+        <h3 className='text-xs px-2 letter tracking-wide uppercase user-select-none'>
           {data.heading}
-        </Heading>
+        </h3>
       }
     >
       {children}
-    </Box>
-  );
-};
+    </Command.Group>
+  )
+}
 
-export default CommandGroup;
+export default CommandGroup
