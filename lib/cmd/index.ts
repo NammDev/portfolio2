@@ -1,7 +1,7 @@
-import { shallow } from 'zustand/shallow';
-import { createWithEqualityFn } from 'zustand/traditional';
+import { shallow } from 'zustand/shallow'
+import { createWithEqualityFn } from 'zustand/traditional'
 
-import type { CommandMenuStore } from './types';
+import type { CommandMenuStore } from './types'
 
 export const useCmdMenu = createWithEqualityFn<CommandMenuStore>(
   (set) => ({
@@ -10,4 +10,4 @@ export const useCmdMenu = createWithEqualityFn<CommandMenuStore>(
     closeCmdMenu: () => set({ isOpen: false }),
   }),
   shallow
-);
+)

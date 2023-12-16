@@ -6,6 +6,7 @@ import {
   DialogHeader,
 } from '@/components/ui/dialog'
 import type * as React from 'react'
+import { CommandDialog } from '../ui/command'
 
 type ModalWrapperProps = {
   isOpen: boolean
@@ -26,7 +27,8 @@ const ModalWrapper = ({
 }: ModalWrapperProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className='rounded-3xl bg-transparent blur-md mx-6 md:mx-0'>
+      {/* <CommandDialog /> */}
+      <DialogContent className='rounded-3xl bg-transparent mx-6 md:mx-0'>
         {header && (
           <DialogHeader className='font-heading font-bold text-2xl lg:text-3xl'>
             {header}
@@ -35,9 +37,7 @@ const ModalWrapper = ({
         {withCloseButton && <DialogClose />}
 
         {body && (
-          <div className='p-0 font-heading bg-headerAlphaBackground blur-sm rounded-3xl'>
-            {body}
-          </div>
+          <div className='p-0 font-heading bg-headerAlphaBackground  rounded-3xl'>{body}</div>
         )}
 
         {footer && <DialogFooter className='grid gap-2'>{footer}</DialogFooter>}

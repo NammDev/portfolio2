@@ -1,15 +1,18 @@
 import * as React from 'react'
 
-import CommandEmpty from './components/CommandEmpty'
-import CommandGroup from './components/CommandGroup'
-import CommandInput from './components/CommandInput'
-import CommandItem from './components/CommandItem'
-import CommandList from './components/CommandList'
-import CommandWrapper from './components/CommandWrapper'
+import {
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+} from '@/components/ui/command'
 import { commands } from './constants'
 import { useCommandCenterAction } from './hook'
 import type { CommandCollection, CommandEntry } from './types'
 import { useCmdMenu } from '@/lib/cmd'
+import CommandWrapper from './CommandWrapper'
 
 const CommandMenu = () => {
   const { isOpen, closeCmdMenu } = useCmdMenu((state) => ({
@@ -25,19 +28,37 @@ const CommandMenu = () => {
 
   return (
     <CommandWrapper isOpen={isOpen} onClose={closeCmdMenu}>
-      <CommandInput />
+      <CommandInput
+        className='px-4 w-full bg-transparent outline-none'
+        placeholder='Type a command or search...'
+      />
 
       {/* <Center height={6}>
         <Divider />
       </Center> */}
+      <CommandSeparator />
 
-      <CommandList>
-        <CommandEmpty />
+      <CommandList className='commandList'>
+        <CommandEmpty className='items-center'>No results found.</CommandEmpty>
 
         {commands.map((commandGroup) => (
-          <CommandGroup data={commandGroup} key={commandGroup.heading}>
+          <CommandGroup
+            key={commandGroup.heading}
+            className='mb-4'
+            heading={
+              <h3 className='text-xs px-2 letter tracking-wide uppercase user-select-none'>
+                {commandGroup.heading}
+              </h3>
+            }
+          >
             {commandGroup.items.map((item) => (
-              <CommandItem data={item} onSelect={handleSelect(commandGroup, item)} key={item.id} />
+              <CommandItem
+                key={item.id}
+                className='commandItem'
+                onSelect={handleSelect(commandGroup, item)}
+              >
+                <p className='text-sm font-sans'>{item.name}</p>
+              </CommandItem>
             ))}
           </CommandGroup>
         ))}
