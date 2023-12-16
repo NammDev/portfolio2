@@ -25,7 +25,7 @@ const NotFound = () => {
 
         <div className='text-center'>
           <Link
-            className='bg-[rgba(65,64,66)] h-10 min-w-[2.5rem] text-base !leading-[1.2] font-sans transition-all items-center inline-flex appearance-none justify-center select-none relative whitespace-nowrap outline-none outline-offset-2 font-semibold text-[rgba(255,255,255,0.92)] rounded-2xl border-[rgba(255,255,255,0.16)] ps-4 pe-4 border-0 hover:border-2 hover:border-gray-500 hover:shadow-sm hover:bg-[rgba(255,255,255,0.16)]'
+            className='bg-buttonBackground1 dark:bg-cardBorder1 h-10 min-w-[2.5rem] text-base !leading-[1.2] font-sans transition-all items-center inline-flex appearance-none justify-center select-none relative whitespace-nowrap outline-offset-2 font-semibold text-buttonForeground1 rounded-2xl ps-4 pe-4 hover:border-2 hover:bg-buttonHover1 hover:shadow-sm hover:border-[#808080]'
             href='/'
           >
             Let&apos;s Head Back
