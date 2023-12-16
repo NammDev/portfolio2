@@ -1,58 +1,48 @@
 import {
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
-} from '@chakra-ui/react'
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+} from '@/components/ui/dialog'
 import type * as React from 'react'
 
-type ModalWrapperProps = Pick<ModalProps, 'isOpen' | 'onClose' | 'size' | 'closeOnOverlayClick'> & {
+type ModalWrapperProps = {
+  isOpen: boolean
+  onClose: () => void
   header?: React.ReactNode
   withCloseButton?: boolean
   body?: React.ReactNode
   footer?: React.ReactNode
-  modalContentProps?: ModalContentProps
-  modalBodyProps?: ModalBodyProps
 }
 
 const ModalWrapper = ({
   isOpen,
-  size = '2xl',
   header,
   withCloseButton = true,
   body,
   footer,
-  closeOnOverlayClick = false,
   onClose,
-  modalContentProps,
-  modalBodyProps,
 }: ModalWrapperProps) => {
   return (
-    <Modal
-      size={size}
-      isOpen={isOpen}
-      onClose={onClose}
-      closeOnOverlayClick={closeOnOverlayClick}
-      isCentered
-    >
-      <ModalOverlay />
-
-      <ModalContent borderRadius={8} {...modalContentProps}>
+    <Dialog open={isOpen} onOpenChange={onClose}>
+      <DialogContent className='rounded-3xl bg-transparent blur-md mx-6 md:mx-0'>
         {header && (
-          <ModalHeader fontWeight='black' fontSize={{ base: '2xl', lg: '3xl' }}>
+          <DialogHeader className='font-heading font-bold text-2xl lg:text-3xl'>
             {header}
-          </ModalHeader>
+          </DialogHeader>
         )}
-        {withCloseButton && <ModalCloseButton />}
+        {withCloseButton && <DialogClose />}
 
-        {body && <ModalBody {...modalBodyProps}>{body}</ModalBody>}
+        {body && (
+          <div className='p-0 font-heading bg-headerAlphaBackground blur-sm rounded-3xl'>
+            {body}
+          </div>
+        )}
 
-        {footer && <ModalFooter gridGap={2}>{footer}</ModalFooter>}
-      </ModalContent>
-    </Modal>
+        {footer && <DialogFooter className='grid gap-2'>{footer}</DialogFooter>}
+      </DialogContent>
+    </Dialog>
   )
 }
 

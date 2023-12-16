@@ -1,7 +1,6 @@
-import { sortedBlogPosts } from '~/lib/constants/blog';
-import { sortedNotes } from '~/lib/constants/note';
-
-import type { CommandCollection } from './types';
+import { sortedBlogPosts } from '@/lib/constants/blog'
+import type { CommandCollection } from './types'
+import { sortedNotes } from '@/lib/constants/note'
 
 const navigationMenus: CommandCollection = {
   heading: 'Main Navigation',
@@ -36,7 +35,7 @@ const navigationMenus: CommandCollection = {
       id: 'about',
     },
   ],
-};
+}
 
 const blogPosts: CommandCollection = {
   heading: 'Blog Posts',
@@ -46,7 +45,7 @@ const blogPosts: CommandCollection = {
     name: blogPost.title,
     id: blogPost.id,
   })),
-};
+}
 
 const notes: CommandCollection = {
   heading: 'Notes',
@@ -56,7 +55,7 @@ const notes: CommandCollection = {
     name: note.title,
     id: note.id,
   })),
-};
+}
 
 const themeCommand: CommandCollection = {
   heading: 'System',
@@ -67,11 +66,6 @@ const themeCommand: CommandCollection = {
       id: '',
     },
   ],
-};
+}
 
-export const commands: Array<CommandCollection> = [
-  themeCommand,
-  navigationMenus,
-  blogPosts,
-  notes,
-];
+export const commands: Array<CommandCollection> = [themeCommand, navigationMenus, blogPosts, notes]

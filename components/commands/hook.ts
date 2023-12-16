@@ -1,68 +1,67 @@
-import { useColorMode } from '@chakra-ui/react';
-import { useRouter } from 'next/navigation';
-import * as React from 'react';
+import { useRouter } from 'next/navigation'
+import * as React from 'react'
 
-import { EVENT_TYPE_CMD } from '~/lib/constants/tracking';
-import { useCmdMenu } from '~/lib/store/cmd';
-import { isMac } from '~/lib/utils/isMac';
-import { trackEvent } from '~/lib/utils/trackEvent';
+// import { EVENT_TYPE_CMD } from '~/lib/constants/tracking';
+// import { trackEvent } from '~/lib/utils/trackEvent';
 
-import type { CommandCollection, CommandEntry } from './types';
+import type { CommandCollection, CommandEntry } from './types'
+import { useCmdMenu } from '@/lib/cmd'
+import { isMac } from '@/lib/utils/isMac'
 
 export const useCommandCenter = () => {
-  const isOpen = useCmdMenu((state) => state.isOpen);
+  const isOpen = useCmdMenu((state) => state.isOpen)
 
   const { openCmdMenu, closeCmdMenu } = useCmdMenu((state) => ({
     openCmdMenu: state.openCmdMenu,
     closeCmdMenu: state.closeCmdMenu,
-  }));
+  }))
 
   const handleKeydownTrigger = React.useCallback(
     (ev: KeyboardEvent) => {
       if (ev.key === 'k' && (isMac ? ev.metaKey : ev.ctrlKey)) {
-        ev.preventDefault();
-        ev.stopPropagation();
+        ev.preventDefault()
+        ev.stopPropagation()
 
         if (isOpen) {
-          closeCmdMenu();
-          return;
+          closeCmdMenu()
+          return
         }
-        trackEvent({
-          eventName: 'open cmd center with cmd+k',
-          eventData: { type: EVENT_TYPE_CMD },
-        });
-        openCmdMenu();
+        // trackEvent({
+        //   eventName: 'open cmd center with cmd+k',
+        //   eventData: { type: EVENT_TYPE_CMD },
+        // })
+        openCmdMenu()
       }
     },
     [closeCmdMenu, isOpen, openCmdMenu]
-  );
+  )
 
   React.useEffect(() => {
-    document.addEventListener('keydown', handleKeydownTrigger);
-    return () => document.removeEventListener('keydown', handleKeydownTrigger);
-  }, [handleKeydownTrigger]);
-};
+    document.addEventListener('keydown', handleKeydownTrigger)
+    return () => document.removeEventListener('keydown', handleKeydownTrigger)
+  }, [handleKeydownTrigger])
+}
 
 export const useCommandCenterAction = () => {
-  const router = useRouter();
-  const { toggleColorMode } = useColorMode();
+  const router = useRouter()
+  // const { toggleColorMode } = useColorMode()
 
-  const closeCmdMenu = useCmdMenu((state) => state.closeCmdMenu);
+  const closeCmdMenu = useCmdMenu((state) => state.closeCmdMenu)
 
   const onSelectItem = (group: CommandCollection, item: CommandEntry) => {
-    trackEvent({
-      eventName: `${group.heading}: ${item.name}`,
-      eventData: { type: EVENT_TYPE_CMD },
-    });
+    // trackEvent({
+    //   eventName: `${group.heading}: ${item.name}`,
+    //   eventData: { type: EVENT_TYPE_CMD },
+    // })
 
     if (group.type === 'theme') {
-      toggleColorMode();
-      return;
+      // toggleColorMode()
+      return
     }
-    const prefix = group.pathPrefix ? `${group.pathPrefix}/` : '';
-    closeCmdMenu();
-    router.push(`/${prefix}${item.id}`);
-  };
+    const prefix = group.pathPrefix ? `${group.pathPrefix}/` : ''
+    closeCmdMenu()
+    router.push(`/${prefix}${item.id}`)
+  }
 
-  return { onSelectItem };
-};
+  return { onSelectItem }
+}

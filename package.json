@@ -12,6 +12,7 @@
     "@giscus/react": "^2.3.0",
     "@opentelemetry/api": "^1.4.0",
     "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-toast": "^1.1.5",
     "@radix-ui/react-tooltip": "^1.0.7",
     "class-variance-authority": "^0.7.0",
@@ -35,6 +36,7 @@
     "remark-gfm": "^3.0.1",
     "sass": "^1.69.5",
     "tailwind-merge": "^2.0.0",
+    "ua-parser-js": "^1.0.37",
     "zustand": "^4.4.7"
   },
   "devDependencies": {
