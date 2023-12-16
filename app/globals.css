@@ -87,6 +87,10 @@
     gap: 1.5rem;
   }
 
+  .commandList::-webkit-scrollbar-track {
+    background-color: #afb2b6;
+  }
+
   .commandItem {
     display: flex;
     margin-left: 1.5rem;
