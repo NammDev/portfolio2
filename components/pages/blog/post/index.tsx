@@ -10,6 +10,7 @@ import BlogPostHead from './BlogPostHead'
 import Image from 'next/image'
 import MarkdownContent from '@/components/shared/MarkdownContent'
 import ShareButtons from '@/components/shared/ShareButtons'
+import GiscusWrapper from '@/components/shared/GiscusWrapper'
 
 const BlogPost = ({ params }: BlogPostProps) => {
   const postData = sortedBlogPosts.find(({ id }) => id === params.id)
@@ -33,7 +34,7 @@ const BlogPost = ({ params }: BlogPostProps) => {
       <MarkdownContent rawContent={postData.body.raw} />
       <div className='grid gap-8 my-12'>
         <ShareButtons title={`Check out this blog post: ${postData.title}`} />
-        {/* <GiscusWrapper category='Blog Post' categoryId='DIC_kwDOD-UOjM4B_fhR' /> */}
+        <GiscusWrapper category='Blog Post' categoryId='DIC_kwDOKyHnWM4CbyOS' />
       </div>
     </article>
   )

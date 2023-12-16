@@ -9,6 +9,7 @@ import NoteDetailHead from './NoteDetailHead'
 import DetailViewCounts from '@/components/shared/DetailViewCounts'
 import ShareButtons from '@/components/shared/ShareButtons'
 import MarkdownContent from '@/components/shared/MarkdownContent'
+import GiscusWrapper from '@/components/shared/GiscusWrapper'
 
 const NoteDetail = ({ params }: NoteDetailProps) => {
   const data = sortedNotes.find(({ id }) => id === params?.id)
@@ -31,7 +32,7 @@ const NoteDetail = ({ params }: NoteDetailProps) => {
       <ShareButtons title={`Check out this note: ${data.title}`} />
 
       <div className='my-12'>
-        {/* <GiscusWrapper category='Notes' categoryId='DIC_kwDOD-UOjM4CQX_7' /> */}
+        <GiscusWrapper category='Note Post' categoryId='DIC_kwDOKyHnWM4CbyOZ' />
       </div>
     </article>
   )
