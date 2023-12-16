@@ -6,7 +6,6 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-  CommandSeparator,
 } from '@/components/ui/command'
 import { commands } from './constants'
 import { useCommandCenterAction } from './hook'
@@ -29,14 +28,13 @@ const CommandMenu = () => {
   return (
     <CommandWrapper isOpen={isOpen} onClose={closeCmdMenu}>
       <CommandInput
-        className='px-4 w-full bg-transparent outline-none'
+        className='px-4 w-full bg-transparent outline-none text-buttonForeground1'
         placeholder='Type a command or search...'
       />
 
-      {/* <Center height={6}>
-        <Divider />
-      </Center> */}
-      <CommandSeparator />
+      <div className='flex items-center justify-center h-6'>
+        <hr className='opacity-60 border-0 border-b w-full' />
+      </div>
 
       <CommandList className='commandList'>
         <CommandEmpty className='items-center'>No results found.</CommandEmpty>
@@ -46,9 +44,9 @@ const CommandMenu = () => {
             key={commandGroup.heading}
             className='mb-4'
             heading={
-              <h3 className='text-xs px-2 letter tracking-wide uppercase user-select-none'>
+              <h2 className='lg:leading-[1.2] font-heading font-bold text-[0.75rem] border-spacing-2 tracking-[2px] uppercase select-none px-2 letter user-select-none'>
                 {commandGroup.heading}
-              </h3>
+              </h2>
             }
           >
             {commandGroup.items.map((item) => (
@@ -57,7 +55,7 @@ const CommandMenu = () => {
                 className='commandItem'
                 onSelect={handleSelect(commandGroup, item)}
               >
-                <p className='text-sm font-sans'>{item.name}</p>
+                <p className='text-[0.875rem] font-sans leading-[1.5]'>{item.name}</p>
               </CommandItem>
             ))}
           </CommandGroup>
