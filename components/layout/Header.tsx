@@ -3,27 +3,26 @@ import * as React from 'react'
 import { RiCommandFill } from 'react-icons/ri'
 import Navigation from './Navigation'
 import ThemeToggle from './ThemeToggle'
+import CommandMenu from '../commands'
+import { useCmdMenu } from '@/lib/cmd'
 
 // import CommandMenu from '~/lib/components/commands'
 // import { EVENT_TYPE_CTA } from '~/lib/constants/tracking'
 // import { useCmdMenu } from '~/lib/store/cmd'
 // import { trackEvent } from '~/lib/utils/trackEvent'
 
-// import Navigation from './Navigation'
-// import ThemeToggle from './ThemeToggle'
-
 const Header = () => {
-  //   const { openCmdMenu } = useCmdMenu((state) => ({
-  //     openCmdMenu: state.openCmdMenu,
-  //   }))
+  const { openCmdMenu } = useCmdMenu((state) => ({
+    openCmdMenu: state.openCmdMenu,
+  }))
 
-  //   const handleOpenCommandCenter = React.useCallback(() => {
-  //     trackEvent({
-  //       eventName: 'open cmd center',
-  //       eventData: { type: EVENT_TYPE_CTA },
-  //     })
-  //     openCmdMenu()
-  //   }, [openCmdMenu])
+  const handleOpenCommandCenter = React.useCallback(() => {
+    // trackEvent({
+    //   eventName: 'open cmd center',
+    //   eventData: { type: EVENT_TYPE_CTA },
+    // })
+    openCmdMenu()
+  }, [openCmdMenu])
 
   return (
     <>
@@ -44,7 +43,7 @@ const Header = () => {
               <button
                 aria-label='command-center'
                 className='iconButton bg-transparent text-[unset]'
-                // onClick={handleOpenCommandCenter}
+                onClick={handleOpenCommandCenter}
               >
                 <RiCommandFill />
               </button>
@@ -54,7 +53,7 @@ const Header = () => {
         </div>
       </header>
 
-      {/* <CommandMenu /> */}
+      <CommandMenu />
     </>
   )
 }
