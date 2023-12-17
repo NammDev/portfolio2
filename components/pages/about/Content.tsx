@@ -16,7 +16,7 @@ const Content = () => {
 
       <div className='flex items-center flex-col gap-4 mt-4 font-sans'>
         <p>
-          I&apos;m Nathan, an experienced Digital Crafter with a strong passion for crafting
+          I&apos;m Nam Nguyen, an experienced Digital Crafter with a strong passion for crafting
           customer-centric tech solutions.
         </p>
 

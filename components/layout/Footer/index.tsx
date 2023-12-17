@@ -51,7 +51,7 @@ const Footer = () => {
           href='https://agustinusnathaniel.com'
           aria-label="Agustinus Nathaniel's site: https://agustinusnathaniel.com"
         >
-          Agustinus Nathaniel
+          Nam Nguyen
         </a>
       </p>
     </footer>
