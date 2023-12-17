@@ -5,8 +5,7 @@ import type { ReactNode } from 'react'
 import { Next13ProgressBar } from 'next13-progressbar'
 import { ThemeProvider } from 'next-themes'
 import { Toaster } from '../ui/toaster'
-
-// import { useCommandCenter } from '~/lib/components/commands/hook'
+import { useCommandCenter } from '../commands/hook'
 
 const Header = dynamic(() => import('./Header'))
 const Footer = dynamic(() => import('./Footer'))
@@ -17,7 +16,7 @@ type LayoutProps = {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  //   useCommandCenter()
+  useCommandCenter()
 
   return (
     <ThemeProvider attribute='class' enableSystem={true}>

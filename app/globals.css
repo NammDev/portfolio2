@@ -209,7 +209,7 @@ body {
   transition-property: background-color;
   transition-duration: 200ms;
   line-height: 1.5;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 html {
