@@ -3,7 +3,7 @@
 import { useTheme } from 'next-themes'
 import * as React from 'react'
 import { RiMoonFill, RiSunFill } from 'react-icons/ri'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 
 // import { EVENT_TYPE_CTA } from '~/lib/constants/tracking'
 // import { trackEvent } from '~/lib/utils/trackEvent'
@@ -32,22 +32,20 @@ const ThemeToggle = () => {
   //     // toggleColorMode()
   //   }, [])
   return (
-    <TooltipProvider delayDuration={100} skipDelayDuration={200}>
-      <Tooltip>
-        <TooltipTrigger>
-          <button
-            aria-label='toggle theme mode'
-            onClick={handleClickToggle}
-            className='bg-transparent text-[unset] iconButton'
-          >
-            {theme === 'light' ? <RiMoonFill /> : <RiSunFill />}
-          </button>
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>theme toggle</p>
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
+    <Tooltip>
+      <TooltipTrigger>
+        <button
+          aria-label='toggle theme mode'
+          onClick={handleClickToggle}
+          className='bg-transparent text-[unset] iconButton'
+        >
+          {theme === 'light' ? <RiMoonFill /> : <RiSunFill />}
+        </button>
+      </TooltipTrigger>
+      <TooltipContent>
+        <p>theme toggle</p>
+      </TooltipContent>
+    </Tooltip>
   )
 }
 

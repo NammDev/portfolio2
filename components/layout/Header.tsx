@@ -5,10 +5,9 @@ import Navigation from './Navigation'
 import ThemeToggle from './ThemeToggle'
 import CommandMenu from '../commands'
 import { useCmdMenu } from '@/lib/cmd'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 
-// import CommandMenu from '~/lib/components/commands'
 // import { EVENT_TYPE_CTA } from '~/lib/constants/tracking'
-// import { useCmdMenu } from '~/lib/store/cmd'
 // import { trackEvent } from '~/lib/utils/trackEvent'
 
 const Header = () => {
@@ -40,14 +39,23 @@ const Header = () => {
             </div>
 
             <div className='flex gap-2'>
-              <button
-                aria-label='command-center'
-                className='iconButton bg-transparent text-[unset]'
-                onClick={handleOpenCommandCenter}
-              >
-                <RiCommandFill />
-              </button>
-              <ThemeToggle />
+              <TooltipProvider delayDuration={100} skipDelayDuration={200}>
+                <Tooltip>
+                  <TooltipTrigger>
+                    <button
+                      aria-label='command-center'
+                      className='iconButton bg-transparent text-[unset]'
+                      onClick={handleOpenCommandCenter}
+                    >
+                      <RiCommandFill />
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>command center</p>
+                  </TooltipContent>
+                </Tooltip>
+                <ThemeToggle />
+              </TooltipProvider>
             </div>
           </div>
         </div>
