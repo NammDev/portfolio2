@@ -3,13 +3,11 @@
 import { MotionDiv } from '@/components/motion/MotionDiv'
 import { childAnimationProps, staggerAnimationProps } from '@/constants/animation'
 import { sortedNotes } from '@/lib/constants/note'
-// import debounce from 'lodash-es/debounce'
+import debounce from 'lodash-es/debounce'
 import React from 'react'
 import NoteCard from './NoteCard'
 import PostSearch from '@/components/shared/PostSearch'
 
-// import NoteCard from '~/lib/components/notes/NoteCard'
-// import PostSearch from '~/lib/components/shared/PostSearch'
 // import type { ViewCounts } from '~/lib/services/db/views'
 
 const notes = sortedNotes
@@ -38,16 +36,13 @@ const NoteListWrapper = ({ noteViewCounts }: NoteListWrapperProps) => {
   })
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // const handleChangeKeyword = React.useCallback(
-  //   debounce((event: React.ChangeEvent<HTMLInputElement>) => {
-  //     setKeyword(event.target.value)
-  //   }, 150),
-  //   []
-  // )
+  const handleChangeKeyword = React.useCallback(
+    debounce((event: React.ChangeEvent<HTMLInputElement>) => {
+      setKeyword(event.target.value)
+    }, 150),
+    []
+  )
 
-  const handleChangeKeyword = function (event: React.ChangeEvent<HTMLInputElement>) {
-    setKeyword(event.target.value)
-  }
   return (
     <>
       <PostSearch keyword={keyword} onChange={handleChangeKeyword} placeholder='Search Note' />

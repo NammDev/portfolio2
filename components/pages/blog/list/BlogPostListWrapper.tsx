@@ -2,13 +2,12 @@
 
 import { staggerAnimationProps } from '@/constants/animation'
 import { sortedBlogPosts } from '@/lib/constants/blog'
-// import debounce from 'lodash-es/debounce'
+import debounce from 'lodash-es/debounce'
 import * as React from 'react'
 import BlogPostCard from './BlogPostCard'
 import { MotionDiv } from '@/components/motion/MotionDiv'
 import PostSearch from '@/components/shared/PostSearch'
 
-// import PostSearch from '~/lib/components/shared/PostSearch'
 // import type { ViewCounts } from '~/lib/services/db/views'
 
 type BlogPostListWrapperProps = {
@@ -23,15 +22,12 @@ const BlogPostListWrapper = ({ blogViewCounts }: BlogPostListWrapperProps) => {
   )
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // const handleChangeKeyword = React.useCallback(
-  //   debounce((event: React.ChangeEvent<HTMLInputElement>) => {
-  //     setKeyword(event.target.value)
-  //   }, 150),
-  //   []
-  // )
-  const handleChangeKeyword = function (event: React.ChangeEvent<HTMLInputElement>) {
-    setKeyword(event.target.value)
-  }
+  const handleChangeKeyword = React.useCallback(
+    debounce((event: React.ChangeEvent<HTMLInputElement>) => {
+      setKeyword(event.target.value)
+    }, 150),
+    []
+  )
 
   return (
     <>
