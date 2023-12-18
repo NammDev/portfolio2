@@ -1,10 +1,8 @@
+import { getAllViewCount } from '@/lib/db/view'
 import BlogPostListWrapper from './BlogPostListWrapper'
 
-// import { getAllViewCount } from '~/lib/services/db/views'
-
 const BlogPostList = async () => {
-  //   const blogPostViewCounts = await getAllViewCount('/blog/')
-  const blogPostViewCounts = Math.floor(Math.random() * 100)
+  const blogPostViewCounts = await getAllViewCount('/blog/')
 
   return (
     <div>

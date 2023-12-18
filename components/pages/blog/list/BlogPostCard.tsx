@@ -9,6 +9,7 @@ import { MotionDiv } from '@/components/motion/MotionDiv'
 import Image from 'next/image'
 import { unsplashImg } from '@/lib/utils/unsplashImg'
 import { childAnimationProps, staggerAnimationProps } from '@/constants/animation'
+import { ViewCounts } from '@/lib/db/view'
 // import { EVENT_TYPE_NAVIGATE } from '~/lib/constants/tracking'
 // import { trackEvent } from '~/lib/utils/trackEvent'
 // import type { ViewCounts } from '~/lib/services/db/views'
@@ -17,7 +18,7 @@ import { childAnimationProps, staggerAnimationProps } from '@/constants/animatio
 
 type BlogPostCardProps = {
   postData: Blog
-  blogViewCounts: number
+  blogViewCounts: ViewCounts
 }
 
 const BlogPostCard = ({ postData, blogViewCounts }: BlogPostCardProps) => {
@@ -28,9 +29,7 @@ const BlogPostCard = ({ postData, blogViewCounts }: BlogPostCardProps) => {
   //   })
   // }, [postData.title])
 
-  // const viewCount = blogViewCounts.find((item) => item.slug?.includes(postData.id))?.count ?? 0
-
-  const viewCount = blogViewCounts
+  const viewCount = blogViewCounts.find((item) => item.slug?.includes(postData.id))?.count ?? 0
 
   return (
     <MotionDiv {...childAnimationProps}>

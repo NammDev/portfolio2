@@ -1,5 +1,6 @@
 'use client'
 
+import { incrementViews } from '@/app/actions'
 import React from 'react'
 
 // import { incrementViews } from '~/app/actions'
@@ -12,12 +13,12 @@ export type ViewCounterProps = {
 } & React.HTMLAttributes<HTMLElement>
 
 const ViewCounter = ({ count, slug, trackView, As, ...props }: ViewCounterProps) => {
-  //   React.useEffect(() => {
-  //     if (trackView) {
-  //       incrementViews(slug)
-  //     }
-  //     // eslint-disable-next-line react-hooks/exhaustive-deps
-  //   }, [])
+  React.useEffect(() => {
+    if (trackView) {
+      incrementViews(slug)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const Text = As ? As : 'p'
 

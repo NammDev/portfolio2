@@ -7,11 +7,10 @@ import * as React from 'react'
 import BlogPostCard from './BlogPostCard'
 import { MotionDiv } from '@/components/motion/MotionDiv'
 import PostSearch from '@/components/shared/PostSearch'
-
-// import type { ViewCounts } from '~/lib/services/db/views'
+import { ViewCounts } from '@/lib/db/view'
 
 type BlogPostListWrapperProps = {
-  blogViewCounts: number
+  blogViewCounts: ViewCounts
 }
 
 const BlogPostListWrapper = ({ blogViewCounts }: BlogPostListWrapperProps) => {
