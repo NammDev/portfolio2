@@ -1,8 +1,8 @@
 ---
-title: wussh
-projectLink: https://wussh.sznm.dev
-description: 'Create personalized link page.'
-date: '2021-05-07'
+title: Notion Blog
+projectLink: https://github.com/NammDev/notion-blog
+description: 'Create personalized with notion CMS.'
+date: '2023-11-18'
 icon: '/app_icons/link.svg'
 thumbnail: '/app_preview/wussh.png'
 highlight: true
@@ -11,5 +11,5 @@ sznmApps: true
 projectType: 'apps'
 stacks:
   - nextjs
-  - chakra-ui
+  - tailwindcss
 ---

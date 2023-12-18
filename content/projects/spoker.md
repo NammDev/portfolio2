@@ -1,17 +1,18 @@
 ---
-title: spoker
-projectLink: https://spoker.dev/intro
+title: Contentlayer Blog
+projectLink: https://github.com/NammDev/blog-contentlayer
 # repoLink: https://github.com/sozonome/spoker
-description: My take on scrum poker.
-date: "2021-02-28"
-icon: "/app_icons/chip.svg"
-thumbnail: "/app_preview/spoker.png"
+description: My blog using contentlayer
+date: '2023-12-01'
+icon: '/app_icons/chip.svg'
+thumbnail: '/app_preview/spoker.png'
 # thumbnailDark: "/app_preview/public-apis-dark.png"
 highlight: true
 featured: true
 sznmApps: true
 projectType: 'apps'
-stacks: 
+stacks:
   - nextjs
-  - chakra-ui
+  - tailwindcss
+  - contentlayer
 ---
