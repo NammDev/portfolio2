@@ -7,13 +7,12 @@ import debounce from 'lodash-es/debounce'
 import React from 'react'
 import NoteCard from './NoteCard'
 import PostSearch from '@/components/shared/PostSearch'
-
-// import type { ViewCounts } from '~/lib/services/db/views'
+import { ViewCounts } from '@/lib/db/view'
 
 const notes = sortedNotes
 
 type NoteListWrapperProps = {
-  noteViewCounts: number
+  noteViewCounts: ViewCounts
 }
 
 const NoteListWrapper = ({ noteViewCounts }: NoteListWrapperProps) => {

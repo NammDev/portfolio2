@@ -2,15 +2,13 @@
 
 // import { Button, Flex, Grid, Heading, Text } from '@chakra-ui/react'
 import NoteListWrapper from '@/components/pages/note/NoteListWrapper'
+import { getAllViewCount } from '@/lib/db/view'
 import Link from 'next/link'
-
-// import { getAllViewCount } from '~/lib/services/db/views'
 
 export const dynamic = 'force-dynamic'
 
 const NoteList = async () => {
-  //   const noteViewCounts = await getAllViewCount('/notes/')
-  const noteViewCounts = Math.floor(Math.random() * 100)
+  const noteViewCounts = await getAllViewCount('/notes/')
 
   return (
     <div className='grid gap-12'>

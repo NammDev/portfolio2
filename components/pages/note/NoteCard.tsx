@@ -6,6 +6,7 @@ import Balancer from 'react-wrap-balancer'
 
 import type { Note } from 'contentlayer/generated'
 import ViewCounter from './ViewCounter'
+import { ViewCounts } from '@/lib/db/view'
 // import ViewCounter from '~/lib/components/shared/ViewCounter'
 // import { EVENT_TYPE_NAVIGATE } from '~/lib/constants/tracking'
 // import type { ViewCounts } from '~/lib/services/db/views'
@@ -13,13 +14,11 @@ import ViewCounter from './ViewCounter'
 
 type NoteCardProps = {
   data: Note
-  noteViewCounts: number
+  noteViewCounts: ViewCounts
 }
 
 const NoteCard = ({ data, noteViewCounts }: NoteCardProps) => {
-  //   const backgroundColor = useColorModeValue('', 'gray.700')
-
-  //   const viewCount = noteViewCounts.find((item) => item.slug?.includes(data.id))?.count ?? 0
+  const viewCount = noteViewCounts.find((item) => item.slug?.includes(data.id))?.count ?? 0
 
   //   const handleClickNote = React.useCallback(() => {
   //     trackEvent({
@@ -27,8 +26,6 @@ const NoteCard = ({ data, noteViewCounts }: NoteCardProps) => {
   //       eventData: { type: EVENT_TYPE_NAVIGATE },
   //     })
   //   }, [data.title])
-
-  const viewCount = noteViewCounts
 
   return (
     <Link

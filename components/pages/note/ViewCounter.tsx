@@ -3,8 +3,6 @@
 import { incrementViews } from '@/app/actions'
 import React from 'react'
 
-// import { incrementViews } from '~/app/actions'
-
 export type ViewCounterProps = {
   count: number | null
   slug: string
